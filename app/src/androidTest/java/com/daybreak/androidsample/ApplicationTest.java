@@ -1,4 +1,4 @@
-package com.github.guotianqi.androidsample;
+package com.daybreak.androidsample;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package com.github.guotianqi.androidsample;
+package com.daybreak.androidsample;
 
 import org.junit.Test;
 
