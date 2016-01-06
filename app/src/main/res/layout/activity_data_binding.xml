@@ -1,20 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto" >
     <data>
+        <import type="android.view.View" />
         <variable
             name="user"
-            type="com.daybreak.androidsample.databinding.model.User"/>
+            type="com.daybreak.androidsample.databinding.viewmodel.User"/>
     </data>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="随机更改User属性"
+            android:onClick="@{user.changeAttr}"/>
+
+        <EditText
+            android:id="@+id/first_name_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="First Name"/>
+
+        <EditText
+            android:id="@+id/last_name_ex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"/>
+
+        <EditText
+            android:id="@+id/email_ex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="email" />
+
         <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@{user.firstName}"/>
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@{user.firstName}"
+            android:onClick="@{user.isFriend ? user.onClickFriend : user.onClickEnemy}"/>
+
         <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:text="@{user.lastName}"/>
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@{user.lastName}"
+            android:onClick="@{user.isFriend ? user.onClickFriend : user.onClickEnemy}"
+            android:visibility="@{user.isAdult ? View.VISIBLE : View.GONE}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@{user.email, default=guotianqi1987}"
+            android:onClick="@{user.isFriend ? user.onClickFriend : user.onClickEnemy}"
+            android:visibility="@{user.isAdult ? View.VISIBLE : View.GONE}"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text='@{user.isFriend ? "is a friend" : "not a friend"}'
+            android:onClick="@{user.isFriend ? user.onClickFriend : user.onClickEnemy}"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text='@{user.isAdult ? "is an adult" : "not an adult"}'
+            android:onClick="@{user.isFriend ? user.onClickFriend : user.onClickEnemy}"/>
+
+        <include layout="@layout/activity_data_binding_contact"
+            bind:user="@{user}" />
     </LinearLayout>
 </layout>
