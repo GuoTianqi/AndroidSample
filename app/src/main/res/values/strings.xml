@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AndroidSample</string>
-    <string name="title_activity_data_binding">DataBinding</string>
-
+    <string name="title_activity_data_binding">Data Binding</string>
+    <string name="title_activity_material_design">Material Design</string>
     <string name="main_activity_list_item_intent_action">com.daybreak.androidsample.main_activity_list_item</string>
 </resources>
