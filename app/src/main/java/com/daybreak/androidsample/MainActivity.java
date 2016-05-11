@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
     private List<NameToActivity> mNameToActivityList = new ArrayList<>();
 
-
     private ListView mListView;
 
     @Override
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         Collections.sort(mNameToActivityList, new Comparator<NameToActivity>() {
             @Override
             public int compare(NameToActivity lhs, NameToActivity rhs) {
-                return lhs.name.compareTo(rhs.toString());
+                return lhs.name.compareTo(rhs.name);
             }
         });
     }
