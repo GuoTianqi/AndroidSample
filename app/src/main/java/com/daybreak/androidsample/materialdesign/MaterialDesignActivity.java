@@ -46,6 +46,7 @@ public class MaterialDesignActivity extends AppCompatActivity {
                 "OOOOONNN",
         };
         mAdapter = new MyAdapter(myDataset);
+        mRecyclerView.setAdapter(mAdapter);
     }
 }
 
