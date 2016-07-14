@@ -25,12 +25,21 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".materialdesign.MaterialDesignActivity"
+        <activity
+            android:name=".materialdesign.MaterialDesignActivity"
             android:label="@string/title_activity_material_design"
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".animation.AnimationActivity"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
