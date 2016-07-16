@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getResources().getString(R.string.main_activity_list_item_intent_action));
         intent.addCategory(Intent.CATEGORY_DEFAULT);
         List<ResolveInfo> resolveInfoList =
-                getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_ALL);
+                getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
         for (ResolveInfo info : resolveInfoList) {
             CharSequence label = info.activityInfo.loadLabel(getPackageManager());
             String activityName = info.activityInfo.name;
