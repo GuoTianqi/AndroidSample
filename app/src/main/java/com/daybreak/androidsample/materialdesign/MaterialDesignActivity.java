@@ -55,7 +55,6 @@ public class MaterialDesignActivity extends AppCompatActivity {
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private String[] mDataset;
 
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mTextView;
         public ViewHolder(View v) {
@@ -85,6 +84,5 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public int getItemCount() {
         return mDataset.length;
     }
-
 
 }

@@ -55,13 +55,16 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".customview.CustomViewActivity"
+        <activity
+            android:name=".customview.CustomViewActivity"
             android:label="Custom View">
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".customview.SloopViewActivity">
         </activity>
     </application>
 
