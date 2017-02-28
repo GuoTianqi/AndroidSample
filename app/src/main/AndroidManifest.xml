@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.daybreak.androidsample">
+          package="com.daybreak.androidsample">
 
     <application
         android:allowBackup="true"
@@ -10,9 +10,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
@@ -20,9 +20,9 @@
             android:label="@string/title_activity_data_binding"
             android:parentActivityName=".MainActivity">
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity
@@ -30,17 +30,37 @@
             android:label="@string/title_activity_material_design"
             android:parentActivityName=".MainActivity">
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".animation.AnimationActivity"
+        <activity
+            android:name=".animation.AnimationActivity"
+            android:label="动画1"
             android:parentActivityName=".MainActivity">
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".animation.Animation2Activity"
+            android:label="动画2"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".customview.CustomViewActivity"
+            android:label="Custom View">
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
     </application>

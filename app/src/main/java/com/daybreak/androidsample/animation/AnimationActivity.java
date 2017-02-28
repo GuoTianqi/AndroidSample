@@ -2,7 +2,9 @@ package com.daybreak.androidsample.animation;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
+import android.animation.LayoutTransition;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,29 +39,30 @@ public class AnimationActivity extends AppCompatActivity {
                 textView.setBackgroundColor(Color.RED);
 
                 mAnimLayout.addView(textView, 300, 100);
+                ViewGroup.LayoutParams lps = textView.getLayoutParams();
+
                 int viewWidht = 300;
                 int viewHeight = 100;
                 Log.e("XXX", "view width = " + viewWidht);
                 int screenWidth = getResources().getDisplayMetrics().widthPixels;
 
-                int startY = 400;
+                int startY = 200;
+
                 int endY = viewHeight * 2;
+
                 AnimatorSet set1 = new AnimatorSet();
-                set1.setInterpolator(new AccelerateInterpolator(4.0f));
-                set1.setDuration(500);
                 set1.playTogether(
                         ObjectAnimator.ofFloat(textView, "translationX", screenWidth - 40, screenWidth - viewWidht),
-                        ObjectAnimator.ofFloat(textView, "translationY", startY, startY)
+                        ObjectAnimator.ofFloat(textView, "translationY", 200, 200)
                 );
-
-                AnimatorSet set2 = new AnimatorSet();
-                set2.setDuration(1000);
-                set2.playTogether(
-                        ObjectAnimator.ofFloat(textView, "translationY", startY, endY),
-                        ObjectAnimator.ofFloat(textView, "alpha", 1, 0.25f)
-                );
+                set1.setDuration(500);
                 AnimatorSet set = new AnimatorSet();
-                set.playSequentially(set1,set2);
+                set.playSequentially(
+                        set1,
+                        ObjectAnimator.ofFloat(textView, "alpha", 1, 1).setDuration(500),
+                        ObjectAnimator.ofFloat(textView, "translationY", 200, 100).setDuration(500),
+                        ObjectAnimator.ofFloat(textView, "alpha", 1, 0.25f).setDuration(1000));
+
                 set.addListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
