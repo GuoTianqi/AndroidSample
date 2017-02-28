@@ -35,6 +35,7 @@ public class CustomViewActivity extends AppCompatActivity {
 
         Class[] myDataset = new Class[] {
                 SloopViewActivity.class,
+                PieViewActivity.class,
         };
 
         mAdapter = new MyAdapter(this, myDataset);
