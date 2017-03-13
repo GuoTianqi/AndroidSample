@@ -73,6 +73,10 @@
             android:label="@string/title_activity_playground_view"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".customview.PictureActivity">
+        </activity>
+        <activity android:name=".customview.CheckViewActivity">
+        </activity>
     </application>
 
 </manifest>
