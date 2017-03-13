@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.daybreak.androidsample.R;
+import com.daybreak.androidsample.customview.view.PlaygroundView;
 
 import java.lang.ref.WeakReference;
 
@@ -34,6 +35,7 @@ public class CustomViewActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         Class[] myDataset = new Class[] {
+                PlaygroundViewActivity.class,
                 SloopViewActivity.class,
                 PieViewActivity.class,
         };
