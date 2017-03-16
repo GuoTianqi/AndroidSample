@@ -38,6 +38,9 @@ public class CustomViewActivity extends AppCompatActivity {
                 PieViewActivity.class,
                 PictureActivity.class,
                 CheckViewActivity.class,
+                PathViewActivity.class,
+                Bezier2ViewActivity.class,
+                Bezier3ViewActivity.class,
         };
 
         mAdapter = new MyAdapter(this, myDataset);
