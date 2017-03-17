@@ -10,7 +10,7 @@ import android.graphics.PathMeasure;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.View;
+import android.view.MotionEvent;
 
 import com.daybreak.androidsample.R;
 
@@ -25,6 +25,7 @@ public class PathMeasureView extends BaseView {
     private float[] tan;
     private Bitmap mBitmap;
     private Matrix mMatrix;
+    private boolean mRunnable = true;
 
     public PathMeasureView(Context context) {
         this(context, null);
@@ -45,9 +46,11 @@ public class PathMeasureView extends BaseView {
         path.addCircle(0, 0, 200, Path.Direction.CW);
         PathMeasure measure = new PathMeasure(path, false);
 
-        currentValue += 0.005;
-        if (currentValue >= 1) {
-            currentValue = 0;
+        if (mRunnable) {
+            currentValue += 0.005;
+            if (currentValue >= 1) {
+                currentValue = 0;
+            }
         }
 
         measure.getPosTan(measure.getLength() * currentValue, pos, tan);
@@ -61,6 +64,7 @@ public class PathMeasureView extends BaseView {
         canvas.drawPath(path, mPaint);
         canvas.drawBitmap(mBitmap, mMatrix, mPaint);
 
+
         postInvalidate();
     }
 
@@ -71,5 +75,16 @@ public class PathMeasureView extends BaseView {
         options.inSampleSize = 2;
         mBitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.icon_arrow, options);
         mMatrix = new Matrix();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            mRunnable = !mRunnable;
+
+            return true;
+        }
+
+        return false;
     }
 }
