@@ -80,7 +80,6 @@ public class Bezier3View extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        //drawCoordinateSystem(canvas);
 
         // 绘制数据点和控制点
         mPaint.setColor(Color.GRAY);
