@@ -87,6 +87,8 @@
         </activity>
         <activity android:name=".customview.SearchViewActivity">
         </activity>
+        <activity android:name=".customview.SetPolyToPolyViewActivity">
+        </activity>
     </application>
 
 </manifest>

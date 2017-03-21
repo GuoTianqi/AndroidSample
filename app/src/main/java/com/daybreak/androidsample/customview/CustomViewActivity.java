@@ -43,7 +43,8 @@ public class CustomViewActivity extends AppCompatActivity {
                 Bezier2ViewActivity.class,
                 Bezier3ViewActivity.class,
                 PathMeasureActivity.class,
-                SearchViewActivity.class
+                SearchViewActivity.class,
+                SetPolyToPolyViewActivity.class,
         };
 
         mAdapter = new MyAdapter(this, myDataset);
