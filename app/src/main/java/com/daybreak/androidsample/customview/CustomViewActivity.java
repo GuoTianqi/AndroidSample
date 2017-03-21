@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.daybreak.androidsample.R;
+import com.daybreak.androidsample.customview.view.SearchView;
 
 import java.lang.ref.WeakReference;
 
@@ -42,6 +43,7 @@ public class CustomViewActivity extends AppCompatActivity {
                 Bezier2ViewActivity.class,
                 Bezier3ViewActivity.class,
                 PathMeasureActivity.class,
+                SearchViewActivity.class
         };
 
         mAdapter = new MyAdapter(this, myDataset);

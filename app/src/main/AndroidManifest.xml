@@ -85,6 +85,8 @@
         </activity>
         <activity android:name=".customview.PathMeasureActivity">
         </activity>
+        <activity android:name=".customview.SearchViewActivity">
+        </activity>
     </application>
 
 </manifest>

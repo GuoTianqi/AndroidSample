@@ -54,10 +54,12 @@ public class PathMeasureView extends BaseView {
         }
 
         measure.getPosTan(measure.getLength() * currentValue, pos, tan);
-        Log.e("XXX", "tan[0]=" + tan[0] + ",tan[1]=" + tan[1]);
         mMatrix.reset();
-        float degrees = (float) (Math.atan2(tan[1], tan[0]) * 180.0 / Math.PI);
-        Log.e("XXX", "degrees=" + degrees);
+        double atan2 = Math.atan2(tan[1], tan[0]);
+        float degrees = (float) (atan2 * 180.0 / Math.PI);
+        if (mRunnable) {
+            Log.e("XXX", "tan[0]=" + tan[0] + ",tan[1]=" + tan[1] + ",atan2=" + atan2 + ",degrees=" + degrees);
+        }
         mMatrix.postRotate(degrees, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2);
         mMatrix.postTranslate(pos[0] - mBitmap.getWidth() / 2, pos[1] - mBitmap.getHeight() / 2);
 
