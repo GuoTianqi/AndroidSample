@@ -2,6 +2,7 @@ package com.daybreak.androidsample.customview;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Region;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -46,6 +47,7 @@ public class CustomViewActivity extends AppCompatActivity {
                 SearchViewActivity.class,
                 SetPolyToPolyViewActivity.class,
                 Rotate3dAnimationActivity.class,
+                RegionClickViewActivity.class,
         };
 
         mAdapter = new MyAdapter(this, myDataset);

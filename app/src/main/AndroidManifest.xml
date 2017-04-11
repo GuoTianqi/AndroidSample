@@ -91,6 +91,8 @@
         </activity>
         <activity android:name=".customview.Rotate3dAnimationActivity">
         </activity>
+        <activity android:name=".customview.RegionClickViewActivity">
+        </activity>
     </application>
 
 </manifest>
