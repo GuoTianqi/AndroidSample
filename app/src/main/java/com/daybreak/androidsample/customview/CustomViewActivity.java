@@ -45,6 +45,7 @@ public class CustomViewActivity extends AppCompatActivity {
                 PathMeasureActivity.class,
                 SearchViewActivity.class,
                 SetPolyToPolyViewActivity.class,
+                Rotate3dAnimationActivity.class,
         };
 
         mAdapter = new MyAdapter(this, myDataset);
