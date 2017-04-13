@@ -32,7 +32,8 @@ public class RegionClickView extends BaseView {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        mCirclePath.addCircle(w / 2, h / 2, 300, Path.Direction.CW);
+        int minWidth = w < h ? w : h;
+        mCirclePath.addCircle(w / 2, h / 2, minWidth / 2, Path.Direction.CW);
         Region globalRegion = new Region(0, 0, w, h);
         mCircleRegion.setPath(mCirclePath, globalRegion);
     }
