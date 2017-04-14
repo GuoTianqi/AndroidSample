@@ -98,6 +98,8 @@
         </activity>
         <activity android:name=".customview.MultiTouchViewActivity">
         </activity>
+        <activity android:name=".customview.DragViewActivity">
+        </activity>
     </application>
 
 </manifest>

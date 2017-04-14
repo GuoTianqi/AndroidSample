@@ -50,6 +50,7 @@ public class CustomViewActivity extends AppCompatActivity {
                 RegionClickViewActivity.class,
                 RemoteControlMenuActivity.class,
                 MultiTouchViewActivity.class,
+                DragViewActivity.class,
         };
 
         mAdapter = new MyAdapter(this, myDataset);
