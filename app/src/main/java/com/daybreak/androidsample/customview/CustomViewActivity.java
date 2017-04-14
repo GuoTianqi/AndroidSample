@@ -49,6 +49,7 @@ public class CustomViewActivity extends AppCompatActivity {
                 Rotate3dAnimationActivity.class,
                 RegionClickViewActivity.class,
                 RemoteControlMenuActivity.class,
+                MultiTouchViewActivity.class,
         };
 
         mAdapter = new MyAdapter(this, myDataset);
