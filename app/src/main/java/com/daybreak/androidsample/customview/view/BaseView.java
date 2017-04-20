@@ -21,8 +21,6 @@ public class BaseView extends View {
     public BaseView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
-        // setLayerType(LAYER_TYPE_SOFTWARE, null);
-
         mPaint = new Paint();
         mPaint.setStyle(Paint.Style.STROKE);
     }

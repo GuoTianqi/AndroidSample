@@ -6,6 +6,7 @@ import android.graphics.Path;
 import android.graphics.Region;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Toast;
 
@@ -23,6 +24,9 @@ public class RegionClickView extends BaseView {
 
     public RegionClickView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+
+        setLayerType(LAYER_TYPE_SOFTWARE, null);
+
         mPaint.setColor(0xFF4E5268);
         mCirclePath = new Path();
         mCircleRegion = new Region();
@@ -33,17 +37,19 @@ public class RegionClickView extends BaseView {
         super.onSizeChanged(w, h, oldw, oldh);
 
         int minWidth = w < h ? w : h;
-        mCirclePath.addCircle(w / 2, h / 2, minWidth / 2, Path.Direction.CW);
+        mCirclePath.addCircle(w / 2, h / 2, minWidth / 4, Path.Direction.CW);
         Region globalRegion = new Region(0, 0, w, h);
         mCircleRegion.setPath(mCirclePath, globalRegion);
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
+        switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
                 int x = (int) event.getX();
                 int y = (int) event.getY();
+
+                Log.e("XXX", String.format("x,y=%d,%d", x, y));
 
                 if (mCircleRegion.contains(x, y)) {
                     Toast.makeText(getContext(), "圆被点击", Toast.LENGTH_SHORT).show();
