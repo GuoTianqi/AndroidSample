@@ -65,7 +65,6 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".mvp.MvpActivity"
             android:label="MVP">
@@ -75,7 +74,15 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".coordinatorlayout.CoordinatorLayoutActivity"
+            android:label="CoordinatorLayout">
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".customview.SloopViewActivity">
         </activity>
         <activity android:name=".customview.PieViewActivity">
@@ -111,8 +118,12 @@
         </activity>
         <activity android:name=".customview.DragViewActivity">
         </activity>
-
         <activity android:name=".mvp.view.UserLoginActivity">
+        </activity>
+        <activity android:name=".coordinatorlayout.items.FloatingActionButtonActivity">
+        </activity>
+        <activity android:name=".coordinatorlayout.items.AppBarLayoutActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
