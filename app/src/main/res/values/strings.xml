@@ -5,4 +5,6 @@
     <string name="main_activity_list_item_intent_action">com.daybreak.androidsample.main_activity_list_item</string>
     <string name="title_activity_playground_view">PlaygroundViewActivity</string>
     <string name="card_text">身是菩提树，心如明镜台，时时勤拂拭，勿使惹尘埃\n菩提本无树，明镜亦非台，本来无一物，何处惹尘埃</string>
+    <string name="title_activity_base_tool_bar">BaseToolBarActivity</string>
+    <string name="title_activity_test_basic">TestBasicActivity</string>
 </resources>

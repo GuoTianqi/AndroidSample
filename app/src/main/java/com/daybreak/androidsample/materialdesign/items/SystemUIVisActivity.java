@@ -2,14 +2,16 @@ package com.daybreak.androidsample.materialdesign.items;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
+import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
 
-public class SystemUIVisActivity extends AppCompatActivity implements CheckBox.OnCheckedChangeListener {
+public class SystemUIVisActivity extends BaseToolBarActivity implements CheckBox.OnCheckedChangeListener {
     private static class FlagData {
         public String name;
         public int flag;
@@ -22,7 +24,7 @@ public class SystemUIVisActivity extends AppCompatActivity implements CheckBox.O
         }
     }
 
-    private static final FlagData[] sFlagDataArr = new FlagData[] {
+    private final FlagData[] sFlagDataArr = new FlagData[] {
             new FlagData("LOW_PROFILE", View.SYSTEM_UI_FLAG_LOW_PROFILE, false),
             new FlagData("HIDE_NAVIGATION", View.SYSTEM_UI_FLAG_HIDE_NAVIGATION, false),
             new FlagData("FULL_SCREEN", View.SYSTEM_UI_FLAG_FULLSCREEN, false),
@@ -39,11 +41,27 @@ public class SystemUIVisActivity extends AppCompatActivity implements CheckBox.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_system_uivis);
+        setContentLayout(R.layout.activity_system_uivis);
 
         mFlagCheckLayout = (ViewGroup) findViewById(R.id.flag_check_layout);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (mFlagCheckLayout.getChildCount() > 0) {
+            return;
+        }
+
+        // 设置 初始 Flags
+        int visFlags = mCoordinatorLayout.getSystemUiVisibility();
+        Log.e("XXX", "visFlags = " + visFlags);
         for (FlagData flagData : sFlagDataArr) {
+            if ((visFlags & flagData.flag) != 0) {
+                flagData.checked = true;
+            }
+
             CheckBox checkBox = new CheckBox(SystemUIVisActivity.this);
             checkBox.setText(flagData.name);
             checkBox.setChecked(flagData.checked);
@@ -52,8 +70,6 @@ public class SystemUIVisActivity extends AppCompatActivity implements CheckBox.O
 
             mFlagCheckLayout.addView(checkBox, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         }
-
-        setSystemUIVis();
     }
 
     @Override

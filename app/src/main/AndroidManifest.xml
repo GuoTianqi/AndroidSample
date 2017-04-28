@@ -163,7 +163,29 @@
         </activity>
         <activity android:name=".materialdesign.items.RecyclerViewActivity">
         </activity>
-        <activity android:name=".materialdesign.items.SystemUIVisActivity">
+        <activity
+            android:name=".materialdesign.items.SystemUIVisActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".BaseToolBarActivity"
+            android:label="@string/title_activity_base_tool_bar"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".TestBasicActivity"
+            android:label="@string/title_activity_test_basic"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
     </application>
 
