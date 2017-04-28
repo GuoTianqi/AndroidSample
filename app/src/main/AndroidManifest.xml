@@ -20,6 +20,9 @@
             android:name=".databinding.DataBindingActivity"
             android:label="@string/title_activity_data_binding"
             android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -30,6 +33,9 @@
             android:name=".materialdesign.MaterialDesignActivity"
             android:label="@string/title_activity_material_design"
             android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -40,6 +46,9 @@
             android:name=".animation.AnimationActivity"
             android:label="动画1"
             android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -50,6 +59,9 @@
             android:name=".animation.Animation2Activity"
             android:label="动画2"
             android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -58,7 +70,11 @@
         </activity>
         <activity
             android:name=".customview.CustomViewActivity"
-            android:label="Custom View">
+            android:label="Custom View"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -67,7 +83,11 @@
         </activity>
         <activity
             android:name=".mvp.MvpActivity"
-            android:label="MVP">
+            android:label="MVP"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -76,7 +96,11 @@
         </activity>
         <activity
             android:name=".coordinatorlayout.CoordinatorLayoutActivity"
-            android:label="CoordinatorLayout">
+            android:label="CoordinatorLayout"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -128,6 +152,9 @@
         </activity>
         <activity android:name=".coordinatorlayout.items.ClooapsingToolBarLayoutActivity"
                   android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
+        <activity android:name=".materialdesign.items.RecyclerViewActivity">
         </activity>
     </application>
 
