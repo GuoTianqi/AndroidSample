@@ -8,6 +8,7 @@ import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -18,7 +19,7 @@ import com.daybreak.androidsample.R;
 /**
  * Created by GuoTianqi on 2016/7/15.
  */
-public class Animation2Activity extends Activity {
+public class Animation2Activity extends AppCompatActivity {
     private int i = 0;
     private LinearLayout container;
     private LayoutTransition mTransitioner;

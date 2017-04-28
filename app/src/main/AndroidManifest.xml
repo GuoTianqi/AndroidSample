@@ -22,7 +22,8 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MainActivity"/>
+
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -35,7 +36,8 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MainActivity"/>
+
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -48,7 +50,8 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MainActivity"/>
+
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -61,7 +64,8 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MainActivity"/>
+
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -74,7 +78,8 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MainActivity"/>
+
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -87,7 +92,8 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MainActivity"/>
+
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -100,7 +106,8 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MainActivity"/>
+
             <intent-filter>
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
@@ -150,11 +157,13 @@
             android:name=".coordinatorlayout.items.AppBarLayoutActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".coordinatorlayout.items.ClooapsingToolBarLayoutActivity"
-                  android:theme="@style/AppTheme.NoActionBar" >
+        <activity
+            android:name=".coordinatorlayout.items.ClooapsingToolBarLayoutActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
         <activity android:name=".materialdesign.items.RecyclerViewActivity">
+        </activity>
+        <activity android:name=".materialdesign.items.SystemUIVisActivity">
         </activity>
     </application>
 
