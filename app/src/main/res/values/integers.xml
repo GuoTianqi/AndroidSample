@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="coordinatorlayout_keylines">
+        <item>16</item>
+        <item>72</item>
+        <item>200</item>
+
+    </integer-array>
+</resources>

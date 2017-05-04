@@ -161,6 +161,12 @@
             android:name=".coordinatorlayout.items.ClooapsingToolBarLayoutActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <activity
+            android:name=".coordinatorlayout.items.CoordinatorLayoutExploreActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <activity android:name=".materialdesign.items.RecyclerViewActivity">
         </activity>
         <activity
