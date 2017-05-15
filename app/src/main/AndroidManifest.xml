@@ -164,7 +164,7 @@
 
         <activity
             android:name=".coordinatorlayout.items.CoordinatorLayoutExploreActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar.TransStatusBar">
         </activity>
 
         <activity android:name=".materialdesign.items.RecyclerViewActivity">
