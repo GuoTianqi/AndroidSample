@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.daybreak.androidsample.BaseClassListActivity;
 import com.daybreak.androidsample.R;
+import com.daybreak.androidsample.customview.view.TextContentView;
 
 import java.lang.ref.WeakReference;
 
@@ -36,6 +37,7 @@ public class CustomViewActivity extends BaseClassListActivity {
                 RemoteControlMenuActivity.class,
                 MultiTouchViewActivity.class,
                 DragViewActivity.class,
+                TextContentViewActivity.class,
         };
 
         return myDataset;

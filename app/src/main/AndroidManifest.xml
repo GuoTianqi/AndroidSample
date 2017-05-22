@@ -161,12 +161,10 @@
             android:name=".coordinatorlayout.items.ClooapsingToolBarLayoutActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
         <activity
             android:name=".coordinatorlayout.items.CoordinatorLayoutExploreActivity"
             android:theme="@style/AppTheme.NoActionBar.TransStatusBar">
         </activity>
-
         <activity android:name=".materialdesign.items.RecyclerViewActivity">
         </activity>
         <activity
@@ -181,8 +179,8 @@
         <activity
             android:name=".TestBasicActivity"
             android:label="@string/title_activity_test_basic"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
@@ -192,6 +190,8 @@
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".customview.TextContentViewActivity">
         </activity>
     </application>
 
