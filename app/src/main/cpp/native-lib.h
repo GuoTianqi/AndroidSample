@@ -1,0 +1,8 @@
+//
+// Created by GuoTianqi on 2017/5/24.
+//
+
+#ifndef ANDROIDSAMPLE_NATIVE_LIB_H
+#define ANDROIDSAMPLE_NATIVE_LIB_H
+
+#endif //ANDROIDSAMPLE_NATIVE_LIB_H
