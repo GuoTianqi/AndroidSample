@@ -12,25 +12,21 @@ import android.view.ViewParent;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
-import org.hamcrest.core.IsInstanceOf;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.replaceText;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
-import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withParent;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
@@ -40,12 +36,12 @@ public class MainActivityTest {
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
-    public void mainActivityTest() {
+    public void mainActivityTest2() {
         ViewInteraction appCompatTextView = onView(
-                allOf(withId(android.R.id.text1), withText("CoordinatorLayout"),
+                allOf(withId(android.R.id.text1), withText("Custom View"),
                         childAtPosition(
                                 withId(R.id.list_view),
-                                0),
+                                1),
                         isDisplayed()));
         appCompatTextView.perform(click());
 
@@ -54,57 +50,54 @@ public class MainActivityTest {
                         withParent(allOf(withId(android.R.id.content),
                                 withParent(withId(R.id.decor_content_parent)))),
                         isDisplayed()));
-        recyclerView.perform(actionOnItemAtPosition(3, click()));
-
-        ViewInteraction floatingActionButton = onView(
-                allOf(withId(R.id.fab),
-                        withParent(allOf(withId(R.id.coordinator_layout),
-                                withParent(withId(android.R.id.content)))),
-                        isDisplayed()));
-        floatingActionButton.perform(click());
+        recyclerView.perform(actionOnItemAtPosition(4, click()));
 
         ViewInteraction appCompatButton = onView(
-                allOf(withText("Test"),
-                        withParent(allOf(withId(R.id.coordinator_layout),
-                                withParent(withId(android.R.id.content)))),
-                        isDisplayed()));
+                allOf(withId(R.id.check), withText("Check"), isDisplayed()));
         appCompatButton.perform(click());
 
-        ViewInteraction appCompatImageButton = onView(
-                allOf(withClassName(is("android.support.v7.widget.AppCompatImageButton")),
-                        withParent(allOf(withId(R.id.toolbar),
-                                withParent(withId(R.id.collapsing_toolbar)))),
-                        isDisplayed()));
-        appCompatImageButton.perform(click());
+        ViewInteraction appCompatButton2 = onView(
+                allOf(withId(R.id.uncheck), withText("UnCheck"), isDisplayed()));
+        appCompatButton2.perform(click());
 
-        ViewInteraction appCompatImageButton2 = onView(
-                allOf(withClassName(is("android.support.v7.widget.AppCompatImageButton")),
-                        withParent(allOf(withId(R.id.toolbar),
-                                withParent(withId(R.id.collapsing_toolbar)))),
-                        isDisplayed()));
-        appCompatImageButton2.perform(click());
+        ViewInteraction appCompatButton3 = onView(
+                allOf(withId(R.id.check), withText("Check"), isDisplayed()));
+        appCompatButton3.perform(click());
 
-        ViewInteraction appCompatImageButton3 = onView(
-                allOf(withContentDescription("转到上一层级"),
-                        withParent(allOf(withId(R.id.action_bar),
-                                withParent(withId(R.id.action_bar_container)))),
-                        isDisplayed()));
-        appCompatImageButton3.perform(click());
+        ViewInteraction appCompatButton4 = onView(
+                allOf(withId(R.id.uncheck), withText("UnCheck"), isDisplayed()));
+        appCompatButton4.perform(click());
+
+        ViewInteraction appCompatButton5 = onView(
+                allOf(withId(R.id.check), withText("Check"), isDisplayed()));
+        appCompatButton5.perform(click());
+
+        ViewInteraction appCompatButton6 = onView(
+                allOf(withId(R.id.uncheck), withText("UnCheck"), isDisplayed()));
+        appCompatButton6.perform(click());
+
+        pressBack();
+
+        pressBack();
 
         ViewInteraction appCompatTextView2 = onView(
-                allOf(withId(android.R.id.text1), withText("Custom View"),
+                allOf(withId(android.R.id.text1), withText("Material Design"),
                         childAtPosition(
                                 withId(R.id.list_view),
-                                1),
+                                4),
                         isDisplayed()));
         appCompatTextView2.perform(click());
 
-        ViewInteraction appCompatImageButton4 = onView(
-                allOf(withContentDescription("转到上一层级"),
-                        withParent(allOf(withId(R.id.action_bar),
-                                withParent(withId(R.id.action_bar_container)))),
+        ViewInteraction recyclerView2 = onView(
+                allOf(withId(R.id.recycler_view),
+                        withParent(allOf(withId(android.R.id.content),
+                                withParent(withId(R.id.decor_content_parent)))),
                         isDisplayed()));
-        appCompatImageButton4.perform(click());
+        recyclerView2.perform(actionOnItemAtPosition(1, click()));
+
+        pressBack();
+
+        pressBack();
 
         ViewInteraction appCompatTextView3 = onView(
                 allOf(withId(android.R.id.text1), withText("MVP"),
@@ -114,27 +107,12 @@ public class MainActivityTest {
                         isDisplayed()));
         appCompatTextView3.perform(click());
 
-        ViewInteraction appCompatImageButton5 = onView(
-                allOf(withContentDescription("转到上一层级"),
-                        withParent(allOf(withId(R.id.action_bar),
-                                withParent(withId(R.id.action_bar_container)))),
-                        isDisplayed()));
-        appCompatImageButton5.perform(click());
-
-        ViewInteraction appCompatTextView4 = onView(
-                allOf(withId(android.R.id.text1), withText("MVP"),
-                        childAtPosition(
-                                withId(R.id.list_view),
-                                3),
-                        isDisplayed()));
-        appCompatTextView4.perform(click());
-
-        ViewInteraction recyclerView2 = onView(
+        ViewInteraction recyclerView3 = onView(
                 allOf(withId(R.id.recycler_view),
                         withParent(allOf(withId(android.R.id.content),
                                 withParent(withId(R.id.decor_content_parent)))),
                         isDisplayed()));
-        recyclerView2.perform(actionOnItemAtPosition(0, click()));
+        recyclerView3.perform(actionOnItemAtPosition(0, click()));
 
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.username), isDisplayed()));
@@ -142,21 +120,23 @@ public class MainActivityTest {
 
         ViewInteraction appCompatEditText2 = onView(
                 allOf(withId(R.id.username), isDisplayed()));
-        appCompatEditText2.perform(click());
+        appCompatEditText2.perform(replaceText("呱呱呱呱呱呱个"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.username), isDisplayed()));
-        appCompatEditText3.perform(replaceText("gggggg to be a"), closeSoftKeyboard());
+                allOf(withId(R.id.password), isDisplayed()));
+        appCompatEditText3.perform(replaceText("天天反反复复"), closeSoftKeyboard());
 
-        ViewInteraction editText = onView(
-                allOf(withId(R.id.username), withText("gggggg to be a"),
-                        childAtPosition(
-                                childAtPosition(
-                                        IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class),
-                                        0),
-                                1),
-                        isDisplayed()));
-        editText.check(matches(withText("gggggg to be a")));
+        ViewInteraction appCompatButton7 = onView(
+                allOf(withId(R.id.login), withText("Login"), isDisplayed()));
+        appCompatButton7.perform(click());
+
+        ViewInteraction appCompatButton8 = onView(
+                allOf(withId(R.id.clear), withText("Clear"), isDisplayed()));
+        appCompatButton8.perform(click());
+
+        pressBack();
+
+        pressBack();
 
     }
 
