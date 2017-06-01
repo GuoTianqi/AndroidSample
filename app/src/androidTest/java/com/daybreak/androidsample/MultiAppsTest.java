@@ -7,6 +7,7 @@ import android.support.test.filters.LargeTest;
 import android.support.test.filters.SdkSuppress;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.By;
+import android.support.test.uiautomator.BySelector;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
 import android.support.test.uiautomator.UiObjectNotFoundException;
@@ -32,7 +33,7 @@ import static org.junit.Assert.assertThat;
 public class MultiAppsTest {
     private static final String BASIC_SAMPLE_PACKAGE
             = "com.daybreak.androidsample";
-    private static final int LAUNCH_TIMEOUT = 5000;
+    private static final int LAUNCH_TIMEOUT = 3000;
     private static final String STRING_TO_BE_TYPED = "UiAutomator";
     private UiDevice mDevice;
 
@@ -96,7 +97,7 @@ public class MultiAppsTest {
                 .className(android.widget.EditText.class)
                 .instance(1));
 
-        usernameText.setText("gtq");
+        usernameText.setText("郭天祈");
         passwordText.setText("123");
 
         UiObject loginBtn = mDevice.findObject(new UiSelector()
@@ -104,6 +105,6 @@ public class MultiAppsTest {
                 .instance(0));
         loginBtn.click();
 
-        mDevice.waitForIdle(3000);
+        mDevice.wait(Until.gone(By.clazz(android.widget.ProgressBar.class)), 5000);
     }
 }
