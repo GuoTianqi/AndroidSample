@@ -1,4 +1,4 @@
-package com.daybreak.androidsample.coordinatorlayout.items;
+package com.daybreak.androidsample.materialdesign.items;
 
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;

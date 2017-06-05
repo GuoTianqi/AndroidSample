@@ -1,4 +1,4 @@
-package com.daybreak.androidsample.coordinatorlayout.items;
+package com.daybreak.androidsample.materialdesign.items;
 
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;

@@ -1,9 +1,8 @@
-package com.daybreak.androidsample.coordinatorlayout.items;
+package com.daybreak.androidsample.materialdesign.items;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.TextViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

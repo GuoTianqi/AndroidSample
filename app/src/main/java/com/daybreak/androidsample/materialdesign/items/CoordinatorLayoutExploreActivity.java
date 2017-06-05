@@ -1,4 +1,4 @@
-package com.daybreak.androidsample.coordinatorlayout.items;
+package com.daybreak.androidsample.materialdesign.items;
 
 import android.graphics.Color;
 import android.os.Bundle;
