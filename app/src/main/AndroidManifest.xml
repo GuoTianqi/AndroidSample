@@ -181,6 +181,8 @@
         </activity>
         <activity android:name=".materialdesign.items.ConstraintLayoutActivity">
         </activity>
+        <activity android:name=".materialdesign.items.KotlinActivity">
+        </activity>
     </application>
 
 </manifest>

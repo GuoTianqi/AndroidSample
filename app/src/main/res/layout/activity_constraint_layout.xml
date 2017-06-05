@@ -125,7 +125,7 @@
         app:layout_constraintRight_toLeftOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
         app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@mipmap/icon_arrow"/>
+        app:srcCompat="@drawable/icon_arrow"/>
 
     <ImageButton
         android:id="@+id/imageButton4"
@@ -146,7 +146,7 @@
         android:id="@+id/imageButton5"
         android:layout_width="72dp"
         android:layout_height="68dp"
-        app:srcCompat="@mipmap/poly_test"
+        app:srcCompat="@drawable/poly_test"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
