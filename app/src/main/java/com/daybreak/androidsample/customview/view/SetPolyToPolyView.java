@@ -50,7 +50,7 @@ public class SetPolyToPolyView extends View{
 
     private void initBitmapAndMatrix() {
         mBitmap = BitmapFactory.decodeResource(getResources(),
-                R.mipmap.poly_test);
+                R.drawable.poly_test);
 
         float[] temp = {0, 0,                                    // 左上
                 mBitmap.getWidth(), 0,                          // 右上

@@ -37,7 +37,7 @@ public class DragView extends BaseView {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.outWidth = 960 / 2;
         options.outHeight = 800 / 2;
-        mBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.poly_test, options);
+        mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.poly_test, options);
         mBitmapRectF = new RectF(0, 0, mBitmap.getWidth(), mBitmap.getHeight());
         mBitmapMatrix = new Matrix();
     }

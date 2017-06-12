@@ -68,7 +68,7 @@ public class CheckView extends View {
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setAntiAlias(true);
 
-        okBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.mipmap.checkers);
+        okBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.checkers);
 
         mHandler = new Handler() {
             @Override

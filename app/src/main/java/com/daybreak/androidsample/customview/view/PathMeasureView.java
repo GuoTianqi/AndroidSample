@@ -75,7 +75,7 @@ public class PathMeasureView extends BaseView {
         tan = new float[2];
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 2;
-        mBitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.icon_arrow, options);
+        mBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.icon_arrow, options);
         mMatrix = new Matrix();
     }
 
