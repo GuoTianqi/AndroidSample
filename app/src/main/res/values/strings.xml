@@ -8,4 +8,7 @@
     <string name="title_activity_base_tool_bar">BaseToolBarActivity</string>
     <string name="title_activity_test_basic">TestBasicActivity</string>
     <string name="login_succes_toast_text">%1$s login success, to MainActivity</string>
+    <string name="title_activity_toolbar_layout">ToolbarLayout</string>
+    <string name="action_favorite">赞</string>
+    <string name="action_settings">设置</string>
 </resources>
