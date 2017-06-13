@@ -38,6 +38,7 @@ public class CustomViewActivity extends BaseClassListActivity {
                 MultiTouchViewActivity.class,
                 DragViewActivity.class,
                 TextContentViewActivity.class,
+                PieChartActivity.class,
         };
 
         return myDataset;

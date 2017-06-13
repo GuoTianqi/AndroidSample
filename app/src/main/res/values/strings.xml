@@ -13,4 +13,6 @@
     <string name="action_settings">设置</string>
     <string name="action_search">搜索</string>
     <string name="action_share">分享</string>
+
+    <string name="reset_button">Reset</string>
 </resources>
