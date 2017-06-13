@@ -11,4 +11,6 @@
     <string name="title_activity_toolbar_layout">ToolbarLayout</string>
     <string name="action_favorite">赞</string>
     <string name="action_settings">设置</string>
+    <string name="action_search">搜索</string>
+    <string name="action_share">分享</string>
 </resources>
