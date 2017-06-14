@@ -36,20 +36,43 @@ abstract public class BaseClassListActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new MyAdapter(this, getClassList());
+        mAdapter = new MyAdapter(this, getClassList(), new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                if (BaseClassListActivity.this.onItemClick(position)) {
+                    return;
+                }
+
+                Context context = BaseClassListActivity.this;
+                if (context != null) {
+                    context.startActivity(new Intent(context, getClassList()[position]));
+                }
+            }
+        });
         mRecyclerView.setAdapter(mAdapter);
     }
 
     abstract public Class[] getClassList();
+
+
+    public boolean onItemClick(final int position) {
+        return false;
+    }
 }
 
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+    public static interface OnItemClickListener {
+        public void onItemClick(int position);
+    }
+
     private WeakReference<Context> mContextRef;
     private Class[] mActivityClasses;
+    private OnItemClickListener mOnItemClickListener;
 
-    public MyAdapter(Context context, Class[] activityClasses) {
+    public MyAdapter(Context context, Class[] activityClasses, OnItemClickListener listener) {
         mContextRef = new WeakReference<Context>(context);
         mActivityClasses = activityClasses;
+        mOnItemClickListener = listener;
     }
 
     @Override
@@ -67,9 +90,8 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Context context = mContextRef.get();
-                if (context != null) {
-                    context.startActivity(new Intent(context, mActivityClasses[position]));
+                if (mOnItemClickListener != null) {
+                    mOnItemClickListener.onItemClick(position);
                 }
             }
         });
