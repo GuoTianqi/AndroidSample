@@ -39,6 +39,7 @@ public class CustomViewActivity extends BaseClassListActivity {
                 DragViewActivity.class,
                 TextContentViewActivity.class,
                 PieChartActivity.class,
+                GestureDetectorActivity.class,
         };
 
         return myDataset;

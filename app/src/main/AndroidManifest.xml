@@ -186,14 +186,15 @@
         <activity
             android:name=".materialdesign.items.ToolbarLayoutActivity"
             android:label="@string/title_activity_toolbar_layout"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
-
         <activity android:name=".customview.PieChartActivity">
+        </activity>
+        <activity android:name=".customview.GestureDetectorActivity">
         </activity>
     </application>
 
