@@ -24,6 +24,14 @@ public class BaseToolBarActivity extends AppCompatActivity {
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolBar);
 
+        mToolBar.setNavigationIcon(R.drawable.ic_arrow_back_white);
+        mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         mContentLayout = (ViewStub) findViewById(R.id.content_layout);
     }
 
