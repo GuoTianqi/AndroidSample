@@ -196,6 +196,9 @@
         </activity>
         <activity android:name=".customview.GestureDetectorActivity">
         </activity>
+        <activity android:name=".materialdesign.items.MaterialAnimationActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
