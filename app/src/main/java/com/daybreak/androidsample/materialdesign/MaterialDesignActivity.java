@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
 import android.view.Window;
 
 import com.daybreak.androidsample.BaseClassListActivity;
@@ -50,7 +52,7 @@ public class MaterialDesignActivity extends BaseClassListActivity {
     public boolean onItemClick(int position) {
         Intent intent = new Intent(this, classes[position]);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setExitTransition(new Explode());
+            // getWindow().setExitTransition(new Explode());
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
         } else {
             startActivity(intent);

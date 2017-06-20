@@ -4,6 +4,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:colorControlHighlight">@color/colorPrimary</item>
     </style>
 
     <style name="AppTheme.NoActionBar.TransStatusBar" parent="AppTheme.NoActionBar">
