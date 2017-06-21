@@ -4,10 +4,15 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.graphics.drawable.AnimatedVectorDrawableCompat;
+import android.support.v4.content.ContextCompat;
+import android.transition.ChangeImageTransform;
 import android.transition.Explode;
 import android.transition.Fade;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.Window;
@@ -21,6 +26,7 @@ public class MaterialAnimationActivity extends BaseToolBarActivity {
     private Button mShowFlower;
     private Button mHideFlower;
     private ImageView mFlower;
+    private ImageView mAnimVector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,15 @@ public class MaterialAnimationActivity extends BaseToolBarActivity {
         mFlower = (ImageView) findViewById(R.id.flower);
         mShowFlower = (Button) findViewById(R.id.show_flower);
         mHideFlower = (Button) findViewById(R.id.hide_flower);
+
+        mAnimVector = (ImageView) findViewById(R.id.anim_vector);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            TypedValue typedValue = new TypedValue();
+            getTheme().resolveAttribute(android.R.attr.selectableItemBackgroundBorderless, typedValue, true);
+//            mFlower.setBackgroundResource(typedValue.resourceId);
+        }
+
 
         mShowFlower.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +102,8 @@ public class MaterialAnimationActivity extends BaseToolBarActivity {
                         CoordinatorLayoutExploreActivity.class);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     getWindow().setExitTransition(new Fade());
-                    getWindow().setReenterTransition(new Explode());
+                    getWindow().setReenterTransition(new Fade());
+                    // getWindow().setSharedElementExitTransition(new ChangeImageTransform());
                     startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(
                             MaterialAnimationActivity.this, mFlower, "flower").toBundle());
                 } else {
@@ -95,5 +111,11 @@ public class MaterialAnimationActivity extends BaseToolBarActivity {
                 }
             }
         });
+
+        AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) ContextCompat.getDrawable(this, R.drawable.animvectordrawable);
+        mAnimVector.setImageDrawable(animatedVectorDrawable);
+        animatedVectorDrawable.start();
+
+
     }
 }

@@ -25,7 +25,7 @@
             app:expandedTitleMarginStart="48dp"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleGravity="bottom|center_horizontal"
-            app:titleEnabled="false"
+            app:titleEnabled="true"
             android:fitsSystemWindows="true">
 
             <ImageView

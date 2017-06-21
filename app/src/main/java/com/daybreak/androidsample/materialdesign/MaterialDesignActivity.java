@@ -52,7 +52,7 @@ public class MaterialDesignActivity extends BaseClassListActivity {
     public boolean onItemClick(int position) {
         Intent intent = new Intent(this, classes[position]);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            // getWindow().setExitTransition(new Explode());
+            getWindow().setExitTransition(new Explode());
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
         } else {
             startActivity(intent);
