@@ -17,6 +17,7 @@ import com.daybreak.androidsample.materialdesign.items.ConstraintLayoutActivity;
 import com.daybreak.androidsample.materialdesign.items.CoordinatorLayoutExploreActivity;
 import com.daybreak.androidsample.materialdesign.items.FloatingActionButtonActivity;
 import com.daybreak.androidsample.materialdesign.items.MaterialAnimationActivity;
+import com.daybreak.androidsample.materialdesign.items.NavigationDrawerActivity;
 import com.daybreak.androidsample.materialdesign.items.RecyclerViewActivity;
 import com.daybreak.androidsample.materialdesign.items.SystemUIVisActivity;
 import com.daybreak.androidsample.materialdesign.items.ToolbarLayoutActivity;
@@ -24,6 +25,7 @@ import com.daybreak.androidsample.materialdesign.items.ToolbarLayoutActivity;
 public class MaterialDesignActivity extends BaseClassListActivity {
     public static final Class[] classes = new Class[] {
             MaterialAnimationActivity.class,
+            NavigationDrawerActivity.class,
             RecyclerViewActivity.class,
             SystemUIVisActivity.class,
             FloatingActionButtonActivity.class,
