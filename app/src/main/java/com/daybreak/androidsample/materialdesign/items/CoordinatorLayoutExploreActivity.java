@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
+import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v4.graphics.drawable.TintAwareDrawable;
+import android.support.v4.view.WindowCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
@@ -44,7 +47,6 @@ public class CoordinatorLayoutExploreActivity extends AppCompatActivity {
         toolbarLayout.setTitle("Clooapsing");
         final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
         Palette.from(BitmapFactory.decodeResource(getResources(), R.drawable.flower))
-                .maximumColorCount()
                 .generate(new Palette.PaletteAsyncListener() {
                     @Override
                     public void onGenerated(Palette palette) {
@@ -54,8 +56,7 @@ public class CoordinatorLayoutExploreActivity extends AppCompatActivity {
                         toolbarLayout.setExpandedTitleColor(swatch.getTitleTextColor());
                         toolbarLayout.setStatusBarScrimColor(swatch.getRgb());
                         toolbarLayout.setContentScrimColor(swatch.getRgb());
-                        toolbar.getNavigationIcon().setTint(swatch.getTitleTextColor());
-                        // coordinatorLayout.setStatusBarBackgroundColor(swatch.getRgb());
+                        DrawableCompat.setTint(toolbar.getNavigationIcon(), swatch.getTitleTextColor());
                     }
                 });
 
