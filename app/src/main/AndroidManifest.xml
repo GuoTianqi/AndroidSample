@@ -205,6 +205,11 @@
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <service
+            android:name=".service.RSSPullService"
+            android:exported="false">
+        </service>
     </application>
 
 </manifest>
