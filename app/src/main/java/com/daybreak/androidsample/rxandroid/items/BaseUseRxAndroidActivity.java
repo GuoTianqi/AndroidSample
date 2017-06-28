@@ -16,6 +16,8 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableOperator;
+import io.reactivex.ObservableSource;
+import io.reactivex.ObservableTransformer;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -102,7 +104,115 @@ public class BaseUseRxAndroidActivity extends BaseToolBarActivity {
 
                 e.onComplete();
             }
+        }).compose(new ObservableTransformer<Integer, String>() {
+            @Override
+            public ObservableSource<String> apply(@NonNull final Observable<Integer> upstream) {
+                return new ObservableSource<String>() {
+
+                    @Override
+                    public void subscribe(@NonNull final Observer<? super String> observer) {
+                        upstream.subscribe(new Observer<Integer>() {
+
+                            @Override
+                            public void onSubscribe(@NonNull Disposable d) {
+                                observer.onSubscribe(d);
+                            }
+
+                            @Override
+                            public void onNext(@NonNull Integer integer) {
+                                observer.onNext("" + integer);
+                            }
+
+                            @Override
+                            public void onError(@NonNull Throwable e) {
+                                observer.onError(e);
+                            }
+
+                            @Override
+                            public void onComplete() {
+                                observer.onComplete();
+                            }
+                        });
+                    }
+                };
+            }
+        }).subscribe(new Observer<String>() {
+            private String mStr;
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+                mStr = "";
+            }
+
+            @Override
+            public void onNext(@NonNull String s) {
+                mStr += s;
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                mTextView.append("\n" + mStr);
+            }
         });
 
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(@NonNull ObservableEmitter<Integer> e) throws Exception {
+                for (int i = 0; i <= 20; i += 2) {
+                    e.onNext(i);
+                }
+
+                e.onComplete();
+            }
+        }).lift(new ObservableOperator<String, Integer>() {
+            @Override
+            public Observer<? super Integer> apply(@NonNull final Observer<? super String> observer) throws Exception {
+                return new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        observer.onSubscribe(d);
+                    }
+
+                    @Override
+                    public void onNext(@NonNull Integer integer) {
+                        observer.onNext("" + integer);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        observer.onError(e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        observer.onComplete();
+                    }
+                };
+            }
+        }).subscribe(new Observer<String>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull String s) {
+
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
     }
 }
