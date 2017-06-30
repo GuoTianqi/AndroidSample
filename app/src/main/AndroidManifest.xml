@@ -225,8 +225,24 @@
             android:exported="false">
         </service>
 
-        <activity android:name=".rxandroid.items.BaseUseRxAndroidActivity"
+        <activity
+            android:name=".rxandroid.items.BaseUseRxAndroidActivity"
             android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".drawable.DrawableActivity"
+                  android:label="Drawable"
+                  android:theme="@style/AppTheme.NoActionBar"
+                  android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
     </application>
 
