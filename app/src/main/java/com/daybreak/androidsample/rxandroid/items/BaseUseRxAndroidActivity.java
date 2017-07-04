@@ -22,6 +22,7 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.operators.single.SingleLift;
 import io.reactivex.schedulers.Schedulers;
@@ -40,6 +41,7 @@ public class BaseUseRxAndroidActivity extends BaseToolBarActivity {
         ButterKnife.bind(this);
 
         Observable.just("Hello", "Hi", "Aloha")
+                .repeat(2)
                 .subscribe(new Observer<String>() {
                     private String mStr;
                     @Override
@@ -212,6 +214,48 @@ public class BaseUseRxAndroidActivity extends BaseToolBarActivity {
             @Override
             public void onComplete() {
 
+            }
+        });
+
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(@NonNull ObservableEmitter<Integer> e) throws Exception {
+                for (int i = 0; i < 10; i++) {
+                    e.onNext(i);
+                }
+
+                e.onComplete();
+            }
+        }).flatMap(new Function<Integer, ObservableSource<String>>() {
+            @Override
+            public ObservableSource<String> apply(@NonNull final Integer integer) throws Exception {
+                return new ObservableSource<String>() {
+                    @Override
+                    public void subscribe(@NonNull Observer<? super String> observer) {
+                        observer.onNext("String " + integer);
+                        observer.onComplete();
+                    }
+                };
+            }
+        }).subscribe(new Observer<String>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+                mTextView.append("----------------\n");
+            }
+
+            @Override
+            public void onNext(@NonNull String s) {
+                mTextView.append(s + " || ");
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                mTextView.append("--------------------\n");
             }
         });
     }
