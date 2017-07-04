@@ -21,10 +21,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
 import com.daybreak.androidsample.customview.view.PieChart;
 
-public class PieChartActivity extends Activity {
+public class PieChartActivity extends BaseToolBarActivity {
     /**
      * Called when the activity is first created.
      */
@@ -34,7 +35,7 @@ public class PieChartActivity extends Activity {
 
         Resources res = getResources();
 
-        setContentView(R.layout.activity_pie_chart);
+        setContentLayout(R.layout.activity_pie_chart);
         final PieChart pie = (PieChart) this.findViewById(R.id.Pie);
         pie.setShowText(true);
         pie.addItem("Agamemnon", 2, res.getColor(R.color.seafoam));

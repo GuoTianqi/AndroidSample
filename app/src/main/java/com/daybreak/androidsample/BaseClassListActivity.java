@@ -18,7 +18,7 @@ import java.lang.ref.WeakReference;
  * Created by GuoTianqi on 2017/4/20.
  */
 
-abstract public class BaseClassListActivity extends AppCompatActivity {
+abstract public class BaseClassListActivity extends BaseToolBarActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -27,7 +27,7 @@ abstract public class BaseClassListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_class_list);
+        setContentLayout(R.layout.activity_base_class_list);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 

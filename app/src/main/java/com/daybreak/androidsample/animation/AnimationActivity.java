@@ -15,16 +15,17 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
 
-public class AnimationActivity extends AppCompatActivity {
+public class AnimationActivity extends BaseToolBarActivity {
     private ViewGroup mAnimLayout;
     private Button mSend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animation);
+        setContentLayout(R.layout.activity_animation);
 
         mAnimLayout = (ViewGroup) findViewById(R.id.anim_layout);
         mSend = (Button) findViewById(R.id.send);

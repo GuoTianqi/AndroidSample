@@ -3,6 +3,7 @@ package com.daybreak.androidsample.customview;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
 import com.daybreak.androidsample.customview.data.PieData;
 import com.daybreak.androidsample.customview.view.PieView;
@@ -10,12 +11,12 @@ import com.daybreak.androidsample.customview.view.PieView;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class PieViewActivity extends AppCompatActivity {
+public class PieViewActivity extends BaseToolBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pie_view);
+        setContentLayout(R.layout.activity_pie_view);
         setTitle("Pie View");
 
         PieView pieView = (PieView) findViewById(R.id.pie_view);

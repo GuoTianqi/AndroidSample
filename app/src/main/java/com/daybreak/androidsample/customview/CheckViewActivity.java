@@ -5,16 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
 import com.daybreak.androidsample.customview.view.CheckView;
 
-public class CheckViewActivity extends AppCompatActivity {
+public class CheckViewActivity extends BaseToolBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("CheckView");
-        setContentView(R.layout.activity_check_view);
+        setContentLayout(R.layout.activity_check_view);
 
         final CheckView checkView = (CheckView) findViewById(R.id.check_view);
         final Button mCheck = (Button) findViewById(R.id.check);

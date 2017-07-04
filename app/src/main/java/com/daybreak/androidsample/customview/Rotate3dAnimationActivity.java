@@ -6,16 +6,17 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 
+import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
 import com.daybreak.androidsample.customview.animation.Rotate3dAnimation;
 
-public class Rotate3dAnimationActivity extends AppCompatActivity {
+public class Rotate3dAnimationActivity extends BaseToolBarActivity {
     private ImageView mImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Rotate3D");
-        setContentView(R.layout.activity_rotate3d_animation);
+        setContentLayout(R.layout.activity_rotate3d_animation);
         mImageView = (ImageView) findViewById(R.id.image);
 
         mImageView.setOnClickListener(new View.OnClickListener() {

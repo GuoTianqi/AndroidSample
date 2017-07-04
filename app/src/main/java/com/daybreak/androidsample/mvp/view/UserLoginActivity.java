@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
 import com.daybreak.androidsample.mvp.bean.User;
 import com.daybreak.androidsample.mvp.presenter.UserLoginPresenter;
@@ -17,7 +18,7 @@ import com.daybreak.androidsample.mvp.presenter.UserLoginPresenter;
  * Created by GuoTianqi on 2017/4/20.
  */
 
-public class UserLoginActivity extends AppCompatActivity implements IUserLgoinView {
+public class UserLoginActivity extends BaseToolBarActivity implements IUserLgoinView {
     private EditText mUsername;
     private EditText mPassword;
     private Button mLogin;
@@ -30,7 +31,7 @@ public class UserLoginActivity extends AppCompatActivity implements IUserLgoinVi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Mvp User Login");
-        setContentView(R.layout.activity_user_login);
+        setContentLayout(R.layout.activity_user_login);
 
         initViews();
     }

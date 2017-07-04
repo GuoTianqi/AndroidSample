@@ -5,10 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 
+import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
 import com.daybreak.androidsample.customview.view.Bezier3View;
 
-public class Bezier3ViewActivity extends AppCompatActivity {
+public class Bezier3ViewActivity extends BaseToolBarActivity {
     private Bezier3View mBezier3View;
     private RadioGroup mRadioGroup;
 
@@ -17,7 +18,7 @@ public class Bezier3ViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("三阶贝塞尔曲线");
-        setContentView(R.layout.activity_bezier3_view);
+        setContentLayout(R.layout.activity_bezier3_view);
 
 
         mBezier3View = (Bezier3View) findViewById(R.id.bezier3_view);

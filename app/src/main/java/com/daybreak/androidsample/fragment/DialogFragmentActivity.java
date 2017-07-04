@@ -4,14 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
 
-public class DialogFragmentActivity extends AppCompatActivity {
+public class DialogFragmentActivity extends BaseToolBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dialog_fragment);
+        setContentLayout(R.layout.activity_dialog_fragment);
 
         findViewById(R.id.show_dialog).setOnClickListener(new View.OnClickListener() {
             @Override

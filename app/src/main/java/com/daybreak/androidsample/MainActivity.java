@@ -19,7 +19,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseToolBarActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private static class NameToActivity {
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentLayout(R.layout.activity_main);
+        mToolBar.setNavigationIcon(null);
         mListView = (ListView) findViewById(R.id.list_view);
         getActivities();
         initListView();

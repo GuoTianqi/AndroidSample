@@ -14,12 +14,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
 
 /**
  * Created by GuoTianqi on 2016/7/15.
  */
-public class Animation2Activity extends AppCompatActivity {
+public class Animation2Activity extends BaseToolBarActivity {
     private int i = 0;
     private LinearLayout container;
     private LayoutTransition mTransitioner;
@@ -28,7 +29,7 @@ public class Animation2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_aniamtion2);
+        setContentLayout(R.layout.activity_aniamtion2);
 
         container = (LinearLayout) findViewById(R.id.parent);
 
