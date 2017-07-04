@@ -229,11 +229,11 @@
             android:name=".rxandroid.items.BaseUseRxAndroidActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
-        <activity android:name=".drawable.DrawableActivity"
-                  android:label="Drawable"
-                  android:theme="@style/AppTheme.NoActionBar"
-                  android:parentActivityName=".MainActivity">
+        <activity
+            android:name=".drawable.DrawableActivity"
+            android:label="Drawable"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
@@ -243,6 +243,8 @@
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".rxandroid.items.AsyncSubjectActivity">
         </activity>
     </application>
 

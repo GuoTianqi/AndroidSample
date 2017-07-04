@@ -19,11 +19,13 @@ import com.daybreak.androidsample.materialdesign.items.NavigationDrawerActivity;
 import com.daybreak.androidsample.materialdesign.items.RecyclerViewActivity;
 import com.daybreak.androidsample.materialdesign.items.SystemUIVisActivity;
 import com.daybreak.androidsample.materialdesign.items.ToolbarLayoutActivity;
+import com.daybreak.androidsample.rxandroid.items.AsyncSubjectActivity;
 import com.daybreak.androidsample.rxandroid.items.BaseUseRxAndroidActivity;
 
 public class RxAndroidActivity extends BaseClassListActivity {
     public static final Class[] classes = new Class[] {
             BaseUseRxAndroidActivity.class,
+            AsyncSubjectActivity.class,
     };
 
     @Override

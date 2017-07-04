@@ -1,14 +1,11 @@
 package com.daybreak.androidsample.databinding.viewmodel;
 
 import android.content.Context;
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableField;
 import android.view.View;
 import android.widget.Toast;
 
-import com.daybreak.androidsample.BR;
 
 import java.lang.ref.WeakReference;
 

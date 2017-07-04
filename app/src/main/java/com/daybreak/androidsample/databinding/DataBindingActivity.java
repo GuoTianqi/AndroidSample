@@ -8,7 +8,6 @@ import android.text.TextWatcher;
 
 import com.daybreak.androidsample.R;
 import com.daybreak.androidsample.databinding.viewmodel.User;
-import com.daybreak.androidsample.databinding.ActivityDataBindingBinding;
 
 public class DataBindingActivity extends AppCompatActivity {
 
