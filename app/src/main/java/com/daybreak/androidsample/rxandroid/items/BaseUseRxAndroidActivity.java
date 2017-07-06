@@ -40,30 +40,54 @@ public class BaseUseRxAndroidActivity extends BaseToolBarActivity {
 
         ButterKnife.bind(this);
 
-        Observable.just("Hello", "Hi", "Aloha")
-                .repeat(2)
-                .subscribe(new Observer<String>() {
-                    private String mStr;
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-                        mStr = "";
-                    }
+        Observable<String> observable = Observable.just("Hello", "Hi", "Aloha");
+        observable.subscribe(new Observer<String>() {
+            private String mStr;
 
-                    @Override
-                    public void onNext(@NonNull String s) {
-                        mStr += s + " ";
-                    }
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+                mStr = "1";
+            }
 
-                    @Override
-                    public void onError(@NonNull Throwable e) {
+            @Override
+            public void onNext(@NonNull String s) {
+                mStr += s + " ";
+            }
 
-                    }
+            @Override
+            public void onError(@NonNull Throwable e) {
 
-                    @Override
-                    public void onComplete() {
-                        mTextView.setText(mStr);
-                    }
-                });
+            }
+
+            @Override
+            public void onComplete() {
+                mTextView.append(mStr);
+            }
+        });
+
+        observable.subscribe(new Observer<String>() {
+            private String mStr;
+
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+                mStr = "2";
+            }
+
+            @Override
+            public void onNext(@NonNull String s) {
+                mStr += s + " ";
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                mTextView.append(mStr);
+            }
+        });
 
         Observable.create(new ObservableOnSubscribe<Drawable>() {
             @Override
