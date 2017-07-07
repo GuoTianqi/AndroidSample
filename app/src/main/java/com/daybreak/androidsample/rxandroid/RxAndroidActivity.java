@@ -21,11 +21,13 @@ import com.daybreak.androidsample.materialdesign.items.SystemUIVisActivity;
 import com.daybreak.androidsample.materialdesign.items.ToolbarLayoutActivity;
 import com.daybreak.androidsample.rxandroid.items.AsyncSubjectActivity;
 import com.daybreak.androidsample.rxandroid.items.BaseUseRxAndroidActivity;
+import com.daybreak.androidsample.rxandroid.items.RxSingleActivity;
 
 public class RxAndroidActivity extends BaseClassListActivity {
     public static final Class[] classes = new Class[] {
             BaseUseRxAndroidActivity.class,
             AsyncSubjectActivity.class,
+            RxSingleActivity.class,
     };
 
     @Override

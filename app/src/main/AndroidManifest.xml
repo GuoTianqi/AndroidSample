@@ -246,6 +246,8 @@
         </activity>
         <activity android:name=".rxandroid.items.AsyncSubjectActivity">
         </activity>
+        <activity android:name=".rxandroid.items.RxSingleActivity">
+        </activity>
     </application>
 
 </manifest>
