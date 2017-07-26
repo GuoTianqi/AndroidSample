@@ -1,15 +1,24 @@
 package com.daybreak.androidsample;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewStub;
 
+import java.util.Arrays;
+
 public class BaseToolBarActivity extends AppCompatActivity {
+    private static final boolean DEBUG = BuildConfig.DEBUG;
+    private static final String TAG = "ActivityLifeCycle";
+
     protected CoordinatorLayout mCoordinatorLayout;
     protected AppBarLayout mAppBarLayout;
     protected Toolbar mToolBar;
@@ -17,6 +26,8 @@ public class BaseToolBarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        logActivityLifeCycle();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_tool_bar);
         mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
@@ -33,6 +44,60 @@ public class BaseToolBarActivity extends AppCompatActivity {
         });
 
         mContentLayout = (ViewStub) findViewById(R.id.content_layout);
+    }
+
+    @Override
+    protected void onRestart() {
+        logActivityLifeCycle();
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStart() {
+        logActivityLifeCycle();
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        logActivityLifeCycle();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        logActivityLifeCycle();
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        logActivityLifeCycle();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        logActivityLifeCycle();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onAttachedToWindow() {
+        logActivityLifeCycle();
+        super.onAttachedToWindow();
+    }
+
+    @Override
+    public void onDetachedFromWindow() {
+        logActivityLifeCycle();
+        super.onDetachedFromWindow();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        logActivityLifeCycle();
+        super.onNewIntent(intent);
     }
 
     public void setContentLayout(@LayoutRes int layoutResId) {
@@ -64,5 +129,28 @@ public class BaseToolBarActivity extends AppCompatActivity {
     @Override
     public void setContentView(View view) {
         super.setContentView(view);
+    }
+
+    private void logActivityLifeCycle() {
+        if (DEBUG) {
+            StackTraceElement[] stacks = Thread.currentThread().getStackTrace();
+            //            StackTraceElement stackTraceElement = stacks[3];
+//
+
+            boolean found = false;
+            int index = 0;
+            for (StackTraceElement element : stacks) {
+                if (TextUtils.equals(element.getMethodName(), "logActivityLifeCycle")) {
+                    found = true;
+                    break;
+                }
+
+                index++;
+            }
+
+            if (found) {
+                Log.d(TAG, getClass().getSimpleName() + ": " + stacks[index + 1].getMethodName());
+            }
+        }
     }
 }
