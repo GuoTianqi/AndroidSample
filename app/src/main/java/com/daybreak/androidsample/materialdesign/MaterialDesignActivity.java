@@ -19,6 +19,7 @@ import com.daybreak.androidsample.materialdesign.items.FloatingActionButtonActiv
 import com.daybreak.androidsample.materialdesign.items.MaterialAnimationActivity;
 import com.daybreak.androidsample.materialdesign.items.NavigationDrawerActivity;
 import com.daybreak.androidsample.materialdesign.items.RecyclerViewActivity;
+import com.daybreak.androidsample.materialdesign.items.SwipeRefreshLayoutActivity;
 import com.daybreak.androidsample.materialdesign.items.SystemUIVisActivity;
 import com.daybreak.androidsample.materialdesign.items.ToolbarLayoutActivity;
 
@@ -33,7 +34,8 @@ public class MaterialDesignActivity extends BaseClassListActivity {
             ClooapsingToolBarLayoutActivity.class,
             CoordinatorLayoutExploreActivity.class,
             ConstraintLayoutActivity.class,
-            ToolbarLayoutActivity.class
+            ToolbarLayoutActivity.class,
+            SwipeRefreshLayoutActivity.class,
     };
 
     @Override

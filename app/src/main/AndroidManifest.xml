@@ -248,6 +248,8 @@
         </activity>
         <activity android:name=".rxandroid.items.RxSingleActivity">
         </activity>
+        <activity android:name=".materialdesign.items.SwipeRefreshLayoutActivity">
+        </activity>
     </application>
 
 </manifest>
