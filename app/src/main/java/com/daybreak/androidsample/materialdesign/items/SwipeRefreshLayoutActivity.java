@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +21,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SwipeRefreshLayoutActivity extends BaseToolBarActivity {
+    private static final String TAG = SwipeRefreshLayoutActivity.class.getSimpleName();
+
     @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout mSwipeRefreshLayout;
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
+
+    private LinearLayoutManager mLayoutManager;
+    private int mItemCount = 16;
+    private boolean mLoadingMore = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +56,56 @@ public class SwipeRefreshLayoutActivity extends BaseToolBarActivity {
                     public void run() {
                         mSwipeRefreshLayout.setRefreshing(false);
                     }
-                }, 6000);
+                }, 2000);
             }
         });
     }
 
     private void initRecyclerView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(SwipeRefreshLayoutActivity.this, LinearLayoutManager.VERTICAL, false));
+        mLayoutManager = new LinearLayoutManager(SwipeRefreshLayoutActivity.this,
+                LinearLayoutManager.VERTICAL, false);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                Log.d(TAG, String.format("onScrolled:(%d, %d)", dx, dy));
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy == 0) {
+                    return;
+                }
+
+                int lastVisibleItemPos = mLayoutManager.findLastVisibleItemPosition();
+                if (lastVisibleItemPos + 1 == mRecyclerView.getAdapter().getItemCount()) {
+                    if (mSwipeRefreshLayout.isRefreshing()) {
+                        return;
+                    }
+
+                    if (mLoadingMore) {
+                        return;
+                    }
+
+                    mLoadingMore = true;
+
+                    Log.d(TAG, "load more");
+
+                    recyclerView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mLoadingMore = false;
+                            mItemCount += 10;
+                            mRecyclerView.getAdapter().notifyDataSetChanged();
+                        }
+                    }, 1000);
+                }
+            }
+        });
+
         mRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
@@ -69,9 +119,16 @@ public class SwipeRefreshLayoutActivity extends BaseToolBarActivity {
 
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                super.getItemOffsets(outRect, view, parent, state);
+                if (parent.getChildLayoutPosition(view) == 0) {
+                    outRect.top = (int) (8 * parent.getResources().getDisplayMetrics().density);
+                }
+
+                outRect.left = outRect.right = outRect.bottom =
+                        (int) (8 * parent.getResources().getDisplayMetrics().density);
+
             }
         });
+
         mRecyclerView.setAdapter(new RecyclerView.Adapter<ViewHolder>() {
             @Override
             public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -88,7 +145,7 @@ public class SwipeRefreshLayoutActivity extends BaseToolBarActivity {
 
             @Override
             public int getItemCount() {
-                return 40;
+                return mItemCount;
             }
         });
     }
