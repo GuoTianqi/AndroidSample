@@ -14,7 +14,7 @@ public class DataBindingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityDataBindingBinding
+        com.daybreak.androidsample.databinding.ActivityDataBindingBinding
                 binding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding);
         final User user = new User(this, "Test", "User", false, true);
         binding.setUser(user);
