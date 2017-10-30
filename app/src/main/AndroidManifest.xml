@@ -3,6 +3,7 @@
           package="com.daybreak.androidsample">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -249,6 +250,8 @@
         <activity android:name=".rxandroid.items.RxSingleActivity">
         </activity>
         <activity android:name=".materialdesign.items.SwipeRefreshLayoutActivity">
+        </activity>
+        <activity android:name=".customview.ViewAttrExampleActivity">
         </activity>
     </application>
 
