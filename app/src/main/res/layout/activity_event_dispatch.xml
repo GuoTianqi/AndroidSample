@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.daybreak.androidsample.customview.EventDispatchActivity">
+
+    <com.daybreak.androidsample.customview.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.daybreak.androidsample.customview.MyLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.daybreak.androidsample.customview.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#888888"
+                android:text="但是你不知道我加富尔王老吉加富尔了"/>
+        </com.daybreak.androidsample.customview.MyLinearLayout>
+    </com.daybreak.androidsample.customview.MyScrollView>
+</android.support.constraint.ConstraintLayout>

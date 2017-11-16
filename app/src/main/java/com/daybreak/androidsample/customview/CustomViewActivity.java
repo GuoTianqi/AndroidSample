@@ -41,6 +41,8 @@ public class CustomViewActivity extends BaseClassListActivity {
                 PieChartActivity.class,
                 GestureDetectorActivity.class,
                 ViewAttrExampleActivity.class,
+                EventDispatchActivity.class,
+                NestScrollViewActivity.class,
         };
 
         return myDataset;

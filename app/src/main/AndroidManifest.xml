@@ -253,6 +253,10 @@
         </activity>
         <activity android:name=".customview.ViewAttrExampleActivity">
         </activity>
+        <activity android:name=".customview.EventDispatchActivity">
+        </activity>
+        <activity android:name=".customview.NestScrollViewActivity">
+        </activity>
     </application>
 
 </manifest>
