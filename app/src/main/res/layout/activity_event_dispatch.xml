@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.daybreak.androidsample.customview.EventDispatchActivity">
 
-    <com.daybreak.androidsample.customview.MyScrollView
+    <com.daybreak.androidsample.customview.MyFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -20,6 +20,23 @@
                 android:layout_height="200dp"
                 android:background="#888888"
                 android:text="但是你不知道我加富尔王老吉加富尔了"/>
+
+
+            <com.daybreak.androidsample.customview.MyButton
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Hello World!"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Hello World!"/>
+
         </com.daybreak.androidsample.customview.MyLinearLayout>
-    </com.daybreak.androidsample.customview.MyScrollView>
+
+    </com.daybreak.androidsample.customview.MyFrameLayout>
 </android.support.constraint.ConstraintLayout>

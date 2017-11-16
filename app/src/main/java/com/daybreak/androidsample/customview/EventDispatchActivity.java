@@ -3,10 +3,12 @@ package com.daybreak.androidsample.customview;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
@@ -20,8 +22,31 @@ public class EventDispatchActivity extends BaseToolBarActivity {
         super.onCreate(savedInstanceState);
         setContentLayout(R.layout.activity_event_dispatch);
     }
+}
 
+class MyButton extends AppCompatButton {
+    private static final String TAG = MyButton.class.getSimpleName();
 
+    public MyButton(Context context) {
+        super(context);
+    }
+
+    public MyButton(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public MyButton(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        boolean result = super.onTouchEvent(event);
+
+        Log.d(TAG, "onTouchEvent: " + event + "  result = " + result);
+
+        return result;
+    }
 }
 
 class MyTextView extends AppCompatTextView {
@@ -83,18 +108,18 @@ class MyLinearLayout extends LinearLayout {
     }
 }
 
-class MyScrollView extends ScrollView {
-    static final String TAG = MyScrollView.class.getSimpleName();
+class MyFrameLayout extends FrameLayout {
+    static final String TAG = MyFrameLayout.class.getSimpleName();
 
-    public MyScrollView(Context context) {
+    public MyFrameLayout(Context context) {
         super(context);
     }
 
-    public MyScrollView(Context context, @Nullable AttributeSet attrs) {
+    public MyFrameLayout(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyScrollView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyFrameLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
