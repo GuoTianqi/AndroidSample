@@ -257,6 +257,26 @@
         </activity>
         <activity android:name=".customview.NestScrollViewActivity">
         </activity>
+
+        <!-- test -->
+        <activity
+            android:name=".test.TestMainActivity"
+            android:label="Test"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".test.CameraDistanceActivity">
+        </activity>
+        <activity android:name=".test.ScrollBarActivity">
+        </activity>
     </application>
 
 </manifest>
