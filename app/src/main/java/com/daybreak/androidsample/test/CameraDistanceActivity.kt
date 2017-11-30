@@ -34,6 +34,12 @@ class CameraDistanceActivity : AppCompatActivity(), View.OnClickListener {
         mEditText.setText("${mImageView.cameraDistance / resources.displayMetrics.density}")
 
         mConfirm.setOnClickListener(this)
+
+        mImageView.setOnLongClickListener(View.OnLongClickListener {
+            mImageView.startDrag(null, View.DragShadowBuilder(mImageView), null, 0)
+
+            true
+        })
     }
 
     override fun onClick(v: View?) {
