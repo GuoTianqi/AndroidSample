@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.daybreak.androidsample">
 
     <application
@@ -10,6 +11,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="asset_statements"
+            android:resource="@string/asset_statements"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -99,6 +104,17 @@
                 <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:host="gtq.com"
+                    android:pathPrefix="/mvp"
+                    android:scheme="http"/>
             </intent-filter>
         </activity>
         <activity
@@ -258,7 +274,6 @@
         <activity android:name=".customview.NestScrollViewActivity">
         </activity>
 
-        <!-- test -->
         <activity
             android:name=".test.TestMainActivity"
             android:label="Test"
@@ -273,9 +288,27 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+
+        <!-- test -->
+        <activity
+            android:name=".layout.LayoutActivity"
+            android:label="Layout"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".test.CameraDistanceActivity">
         </activity>
         <activity android:name=".test.ScrollBarActivity">
+        </activity>
+        <activity android:name=".layout.items.GridLayoutActivity">
         </activity>
     </application>
 
