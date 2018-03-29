@@ -23,6 +23,7 @@ import com.daybreak.androidsample.materialdesign.items.RecyclerViewActivity;
 import com.daybreak.androidsample.materialdesign.items.SwipeRefreshLayoutActivity;
 import com.daybreak.androidsample.materialdesign.items.SystemUIVisActivity;
 import com.daybreak.androidsample.materialdesign.items.ToolbarLayoutActivity;
+import com.daybreak.androidsample.materialdesign.items.transitions.TransitionsMainActivity;
 
 public class MaterialDesignActivity extends BaseClassListActivity {
     public static final Class[] classes = new Class[] {
@@ -37,7 +38,8 @@ public class MaterialDesignActivity extends BaseClassListActivity {
             ConstraintLayoutActivity.class,
             ToolbarLayoutActivity.class,
             SwipeRefreshLayoutActivity.class,
-            KotlinActivity.class
+            KotlinActivity.class,
+            TransitionsMainActivity.class
     };
 
     @Override

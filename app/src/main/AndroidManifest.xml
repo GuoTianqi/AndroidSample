@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.daybreak.androidsample">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.daybreak.androidsample">
 
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <meta-data
             android:name="asset_statements"
-            android:resource="@string/asset_statements"/>
+            android:resource="@string/asset_statements" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -28,12 +29,12 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -42,12 +43,12 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -56,12 +57,12 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -70,12 +71,12 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -84,12 +85,12 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -98,23 +99,23 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
                     android:host="gtq.com"
                     android:pathPrefix="/mvp"
-                    android:scheme="http"/>
+                    android:scheme="http" />
             </intent-filter>
         </activity>
         <activity
@@ -123,76 +124,52 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".customview.SloopViewActivity">
-        </activity>
-        <activity android:name=".customview.PieViewActivity">
-        </activity>
+        <activity android:name=".customview.SloopViewActivity"></activity>
+        <activity android:name=".customview.PieViewActivity"></activity>
         <activity
             android:name=".customview.PlaygroundViewActivity"
             android:label="@string/title_activity_playground_view"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".customview.PictureActivity">
-        </activity>
-        <activity android:name=".customview.CheckViewActivity">
-        </activity>
-        <activity android:name=".customview.PathViewActivity">
-        </activity>
-        <activity android:name=".customview.Bezier2ViewActivity">
-        </activity>
-        <activity android:name=".customview.Bezier3ViewActivity">
-        </activity>
-        <activity android:name=".customview.PathMeasureActivity">
-        </activity>
-        <activity android:name=".customview.SearchViewActivity">
-        </activity>
-        <activity android:name=".customview.SetPolyToPolyViewActivity">
-        </activity>
-        <activity android:name=".customview.Rotate3dAnimationActivity">
-        </activity>
-        <activity android:name=".customview.RegionClickViewActivity">
-        </activity>
-        <activity android:name=".customview.RemoteControlMenuActivity">
-        </activity>
-        <activity android:name=".customview.MultiTouchViewActivity">
-        </activity>
-        <activity android:name=".customview.DragViewActivity">
-        </activity>
-        <activity android:name=".mvp.view.UserLoginActivity">
-        </activity>
-        <activity android:name=".materialdesign.items.FloatingActionButtonActivity">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".customview.PictureActivity"></activity>
+        <activity android:name=".customview.CheckViewActivity"></activity>
+        <activity android:name=".customview.PathViewActivity"></activity>
+        <activity android:name=".customview.Bezier2ViewActivity"></activity>
+        <activity android:name=".customview.Bezier3ViewActivity"></activity>
+        <activity android:name=".customview.PathMeasureActivity"></activity>
+        <activity android:name=".customview.SearchViewActivity"></activity>
+        <activity android:name=".customview.SetPolyToPolyViewActivity"></activity>
+        <activity android:name=".customview.Rotate3dAnimationActivity"></activity>
+        <activity android:name=".customview.RegionClickViewActivity"></activity>
+        <activity android:name=".customview.RemoteControlMenuActivity"></activity>
+        <activity android:name=".customview.MultiTouchViewActivity"></activity>
+        <activity android:name=".customview.DragViewActivity"></activity>
+        <activity android:name=".mvp.view.UserLoginActivity"></activity>
+        <activity android:name=".materialdesign.items.FloatingActionButtonActivity"></activity>
         <activity
             android:name=".materialdesign.items.AppBarLayoutActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".materialdesign.items.ClooapsingToolBarLayoutActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".materialdesign.items.CoordinatorLayoutExploreActivity"
-            android:theme="@style/AppTheme.NoActionBar.TransStatusBar">
-        </activity>
-        <activity android:name=".materialdesign.items.RecyclerViewActivity">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar.TransStatusBar"></activity>
+        <activity android:name=".materialdesign.items.RecyclerViewActivity"></activity>
         <activity
             android:name=".materialdesign.items.SystemUIVisActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".BaseToolBarActivity"
             android:label="@string/title_activity_base_tool_bar"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".TestBasicActivity"
             android:label="@string/title_activity_test_basic"
@@ -200,20 +177,17 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".customview.TextContentViewActivity">
-        </activity>
-        <activity android:name=".materialdesign.items.ConstraintLayoutActivity">
-        </activity>
-        <activity android:name=".materialdesign.items.KotlinActivity">
-        </activity>
+        <activity android:name=".customview.TextContentViewActivity"></activity>
+        <activity android:name=".materialdesign.items.ConstraintLayoutActivity"></activity>
+        <activity android:name=".materialdesign.items.KotlinActivity"></activity>
         <activity
             android:name=".materialdesign.items.ToolbarLayoutActivity"
             android:label="@string/title_activity_toolbar_layout"
@@ -221,31 +195,25 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".customview.PieChartActivity">
-        </activity>
-        <activity android:name=".customview.GestureDetectorActivity">
-        </activity>
+        <activity android:name=".customview.PieChartActivity"></activity>
+        <activity android:name=".customview.GestureDetectorActivity"></activity>
         <activity
             android:name=".materialdesign.items.MaterialAnimationActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".materialdesign.items.NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <service
             android:name=".service.RSSPullService"
-            android:exported="false">
-        </service>
+            android:exported="false"></service>
 
         <activity
             android:name=".rxandroid.items.BaseUseRxAndroidActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".drawable.DrawableActivity"
             android:label="Drawable"
@@ -253,39 +221,32 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".rxandroid.items.AsyncSubjectActivity">
-        </activity>
-        <activity android:name=".rxandroid.items.RxSingleActivity">
-        </activity>
-        <activity android:name=".materialdesign.items.SwipeRefreshLayoutActivity">
-        </activity>
-        <activity android:name=".customview.ViewAttrExampleActivity">
-        </activity>
-        <activity android:name=".customview.EventDispatchActivity">
-        </activity>
-        <activity android:name=".customview.NestScrollViewActivity">
-        </activity>
-
+        <activity android:name=".rxandroid.items.AsyncSubjectActivity"></activity>
+        <activity android:name=".rxandroid.items.RxSingleActivity"></activity>
+        <activity android:name=".materialdesign.items.SwipeRefreshLayoutActivity"></activity>
+        <activity android:name=".customview.ViewAttrExampleActivity"></activity>
+        <activity android:name=".customview.EventDispatchActivity"></activity>
+        <activity android:name=".customview.NestScrollViewActivity"></activity>
         <activity
             android:name=".test.TestMainActivity"
             android:label="Test"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
@@ -296,20 +257,21 @@
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
 
             <intent-filter>
-                <action android:name="com.daybreak.androidsample.main_activity_list_item"/>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".test.CameraDistanceActivity">
-        </activity>
-        <activity android:name=".test.ScrollBarActivity">
-        </activity>
-        <activity android:name=".layout.items.GridLayoutActivity">
-        </activity>
+        <activity android:name=".test.CameraDistanceActivity"></activity>
+        <activity android:name=".test.ScrollBarActivity"></activity>
+        <activity android:name=".layout.items.GridLayoutActivity"></activity>
+        <activity
+            android:name=".materialdesign.items.transitions.TransitionsMainActivity"
+            android:label="@string/title_activity_transitions_main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
