@@ -274,7 +274,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".drawable.DrawableRepeatActivity" />
         <activity android:name=".drawable.DrawableTintActivity" />
-        <activity android:name=".drawable.DrawableBoundsActivity"></activity>
+        <activity android:name=".drawable.DrawableBoundsActivity" />
+        <activity android:name=".customview.MirrorImageViewActivity"></activity>
     </application>
 
 </manifest>
