@@ -274,6 +274,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".drawable.DrawableRepeatActivity" />
         <activity android:name=".drawable.DrawableTintActivity" />
+        <activity android:name=".drawable.DrawableBoundsActivity"></activity>
     </application>
 
 </manifest>

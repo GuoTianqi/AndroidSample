@@ -17,6 +17,7 @@ public class DrawableActivity extends BaseClassListActivity {
     public static final Class[] classes = new Class[] {
             DrawableRepeatActivity.class,
             DrawableTintActivity.class,
+            DrawableBoundsActivity.class,
     };
 
     @Override
