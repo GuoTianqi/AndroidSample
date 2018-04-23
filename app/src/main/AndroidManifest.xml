@@ -275,7 +275,24 @@
         <activity android:name=".drawable.DrawableRepeatActivity" />
         <activity android:name=".drawable.DrawableTintActivity" />
         <activity android:name=".drawable.DrawableBoundsActivity" />
-        <activity android:name=".customview.MirrorImageViewActivity"></activity>
+        <activity android:name=".customview.MirrorImageViewActivity" />
+        <activity
+            android:name=".archlifecycle.ArchLifecycleActivity"
+            android:label="Arch LifeCycle"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".archlifecycle.sample.ArchLifeCycleSampleActivity"></activity>
     </application>
 
 </manifest>
