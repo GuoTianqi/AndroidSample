@@ -8,7 +8,10 @@ buildscript {
     ext.compileSdkVersion = 27
     ext.buildToolsVersion = '27.0.3'
 
-    ext.supportLibraryVersion = '27.0.0'
+    ext.supportLibraryVersion = '27.1.1'
+    ext.lifecycleVersion = "1.1.1"
+    ext.roomVersion = "1.0.0"
+    ext.pagingVersion = "1.0.0-rc1"
 
     repositories {
         jcenter()
