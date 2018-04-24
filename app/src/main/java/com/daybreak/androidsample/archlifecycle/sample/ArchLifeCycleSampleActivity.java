@@ -1,6 +1,7 @@
 package com.daybreak.androidsample.archlifecycle.sample;
 
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.Transformations;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -43,7 +44,8 @@ public class ArchLifeCycleSampleActivity extends BaseToolBarActivity {
             mNameTv.setText(newName);
         };
 
-        mModel.getCurrentName().observe(this, nameObserver);
+        // mModel.getCurrentName().observe(this, nameObserver);
+        Transformations.map(mModel.getCurrentName(), name -> name + ", Ahh!").observe(this, nameObserver);
 
         mChangeName.setOnClickListener(v -> {
             String anotherName = NAMES[(int) (System.currentTimeMillis() % NAMES.length)];
