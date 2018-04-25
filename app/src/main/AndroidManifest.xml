@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.daybreak.androidsample">
 
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -12,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+
         <meta-data
             android:name="asset_statements"
             android:resource="@string/asset_statements" />
@@ -292,7 +295,29 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".archlifecycle.sample.ArchLifeCycleSampleActivity"></activity>
+        <activity android:name=".archlifecycle.sample.ArchLifeCycleSampleActivity" />
+
+        <!-- Loader Sample -->
+        <activity
+            android:name=".loader.LoaderMainActivity"
+            android:label="Loader Sample"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".loader.contacts.ContactsLoaderActivity"
+            android:label="@string/title_activity_contacts_loader"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

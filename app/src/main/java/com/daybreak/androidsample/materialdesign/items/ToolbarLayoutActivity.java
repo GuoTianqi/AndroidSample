@@ -50,9 +50,9 @@ public class ToolbarLayoutActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_toolbar_layout, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        SearchView searchView = (SearchView) searchItem.getActionView();
 
-        MenuItemCompat.setOnActionExpandListener(searchItem, new MenuItemCompat.OnActionExpandListener() {
+        searchItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
                 Toast.makeText(ToolbarLayoutActivity.this, "Expaned", Toast.LENGTH_SHORT).show();
