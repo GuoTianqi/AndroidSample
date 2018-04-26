@@ -6,10 +6,12 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.daybreak.androidsample.BaseToolBarActivity;
 import com.daybreak.androidsample.R;
+import com.daybreak.androidsample.glide.GlideApp;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,9 +25,10 @@ public class ArchLifeCycleSampleActivity extends BaseToolBarActivity {
 
     @BindView(R.id.name_tv)
     TextView mNameTv;
-
     @BindView(R.id.change_name)
     Button mChangeName;
+    @BindView(R.id.image_view)
+    ImageView mImageView;
 
     private SampleViewModel mModel;
 
@@ -52,5 +55,11 @@ public class ArchLifeCycleSampleActivity extends BaseToolBarActivity {
 
             mModel.getCurrentName().setValue(anotherName);
         });
+
+        GlideApp.with(this)
+                .load("https://images.pexels.com/photos/433524/pexels-photo-433524.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+                .placeholder(R.drawable.flower)
+                .centerCrop()
+                .into(mImageView);
     }
 }
