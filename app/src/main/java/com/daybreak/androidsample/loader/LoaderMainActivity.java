@@ -4,11 +4,13 @@ import android.content.Intent;
 
 import com.daybreak.androidsample.BaseClassListActivity;
 import com.daybreak.androidsample.archlifecycle.sample.ArchLifeCycleSampleActivity;
+import com.daybreak.androidsample.loader.applist.AppListLoaderActivity;
 import com.daybreak.androidsample.loader.contacts.ContactsLoaderActivity;
 
 public class LoaderMainActivity extends BaseClassListActivity {
     public static final Class[] classes = new Class[] {
             ContactsLoaderActivity.class,
+            AppListLoaderActivity.class,
     };
 
     @Override
