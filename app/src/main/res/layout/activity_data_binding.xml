@@ -4,8 +4,8 @@
     <data>
         <import type="android.view.View" />
         <variable
-            name="user"
-            type="com.daybreak.androidsample.databinding.viewmodel.User"/>
+            name="viewModel"
+            type="com.daybreak.androidsample.databinding.viewmodel.DataBindingViewModel"/>
     </data>
 
     <LinearLayout
@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="随机更改User属性"
-            android:onClick="@{user.changeAttr}"/>
+            android:onClick="@{viewModel.user::changeAttr}"/>
 
         <EditText
             android:id="@+id/first_name_et"
@@ -43,37 +43,37 @@
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:text="@{user.firstName}"
-            android:onClick="@{user.isFriend ? user.onClickFriend : user.onClickEnemy}"/>
+            android:text="@{viewModel.user.firstName}"
+            android:onClick="@{viewModel::onClick}"/>
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:text="@{user.lastName}"
-            android:onClick="@{user.isFriend ? user.onClickFriend : user.onClickEnemy}"
-            android:visibility="@{user.isAdult ? View.VISIBLE : View.GONE}"/>
+            android:text="@{viewModel.user.lastName}"
+            android:onClick="@{(view) -> viewModel.onClick(view)}"
+            android:visibility="@{viewModel.user.adult ? View.VISIBLE : View.GONE}"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:text="@{user.email, default=guotianqi1987}"
-            android:onClick="@{user.isFriend ? user.onClickFriend : user.onClickEnemy}"
-            android:visibility="@{user.isAdult ? View.VISIBLE : View.GONE}"/>
+            android:text="@{viewModel.user.email, default=guotianqi1987}"
+            android:onClick="@{(view) -> viewModel.onClick(view)}"
+            android:visibility="@{viewModel.user.adult ? View.VISIBLE : View.GONE}"/>
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:text='@{user.isFriend ? "is a friend" : "not a friend"}'
-            android:onClick="@{user.isFriend ? user.onClickFriend : user.onClickEnemy}"/>
+            android:text='@{viewModel.user.friend ? "is a friend" : "not a friend"}'
+            android:onClick="@{viewModel::onClick}" />
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:text='@{user.isAdult ? "is an adult" : "not an adult"}'
-            android:onClick="@{user.isFriend ? user.onClickFriend : user.onClickEnemy}"/>
+            android:text='@{viewModel.user.adult ? "is an adult" : "not an adult"}'
+            android:onClick="@{viewModel::onClick}" />
 
         <include layout="@layout/activity_data_binding_contact"
-            bind:user="@{user}" />
+            bind:user="@{viewModel.user}" />
     </LinearLayout>
 </layout>

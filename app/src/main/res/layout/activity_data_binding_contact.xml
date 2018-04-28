@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <import type="com.daybreak.androidsample.databinding.viewmodel.User" />
-        <variable name="user" type="User" />
+        <variable name="user"
+            type="com.daybreak.androidsample.databinding.viewmodel.User2" />
     </data>
 
     <LinearLayout

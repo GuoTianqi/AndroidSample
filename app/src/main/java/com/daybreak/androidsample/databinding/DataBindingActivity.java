@@ -1,5 +1,6 @@
 package com.daybreak.androidsample.databinding;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 
 import com.daybreak.androidsample.R;
+import com.daybreak.androidsample.databinding.viewmodel.DataBindingViewModel;
 import com.daybreak.androidsample.databinding.viewmodel.User;
 
 public class DataBindingActivity extends AppCompatActivity {
@@ -14,10 +16,10 @@ public class DataBindingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        com.daybreak.androidsample.databinding.ActivityDataBindingBinding
+        ActivityDataBindingBinding
                 binding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding);
-        final User user = new User(this, "Test", "User", false, true);
-        binding.setUser(user);
+        DataBindingViewModel viewModel = ViewModelProviders.of(this).get(DataBindingViewModel.class);
+        binding.setViewModel(viewModel);
         binding.firstNameEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -27,7 +29,7 @@ public class DataBindingActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                user.firstName.set(s.toString());
+                viewModel.getUser().setFirstName(s.toString());
             }
         });
 
@@ -40,7 +42,7 @@ public class DataBindingActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                user.lastName.set(s.toString());
+                viewModel.getUser().setLastName(s.toString());
             }
         });
 
@@ -57,7 +59,7 @@ public class DataBindingActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                user.email.set(s.toString());
+                viewModel.getUser().setEmail(s.toString());
             }
         });
     }
