@@ -330,6 +330,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.daybreak.androidsample.BaseToolBarActivity" />
         </activity>
+        <activity
+            android:name=".vector.VectorDrawableActivity"
+            android:label="@string/title_activity_vector_drawable"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter></activity>
     </application>
 
 </manifest>
