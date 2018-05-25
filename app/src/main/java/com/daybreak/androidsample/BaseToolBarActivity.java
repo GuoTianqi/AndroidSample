@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewStub;
 
 import java.util.Arrays;
@@ -29,7 +30,7 @@ public class BaseToolBarActivity extends AppCompatActivity {
         logActivityLifeCycle();
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_tool_bar);
+        super.setContentView(R.layout.activity_base_tool_bar);
         mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
         mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
@@ -105,17 +106,9 @@ public class BaseToolBarActivity extends AppCompatActivity {
         mContentLayout.inflate();
     }
 
-    /**
-     *
-     * use {@link #setContentLayout(int)}
-     *
-     * @param layoutResID
-     * @deprecated
-     */
-    @Deprecated
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
-        super.setContentView(layoutResID);
+        setContentLayout(layoutResID);
     }
 
     /**
