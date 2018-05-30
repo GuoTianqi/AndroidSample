@@ -331,6 +331,14 @@
                 android:value="com.daybreak.androidsample.BaseToolBarActivity" />
         </activity>
         <activity
+            android:name=".materialdesign.items.BottomSheetBehaviorActivity"
+            android:label="@string/title_activity_bottom_sheet_behavior"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CustomTabsActivity"
+            android:label="@string/title_activity_custom_tabs"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".vector.VectorDrawableActivity"
             android:label="@string/title_activity_vector_drawable"
             android:parentActivityName=".MainActivity">

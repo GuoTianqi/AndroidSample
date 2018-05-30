@@ -11,6 +11,7 @@ import android.transition.Slide;
 import android.view.Window;
 
 import com.daybreak.androidsample.BaseClassListActivity;
+import com.daybreak.androidsample.CustomTabsActivity;
 import com.daybreak.androidsample.materialdesign.items.AppBarLayoutActivity;
 import com.daybreak.androidsample.materialdesign.items.ClooapsingToolBarLayoutActivity;
 import com.daybreak.androidsample.materialdesign.items.ConstraintLayoutActivity;
@@ -39,7 +40,8 @@ public class MaterialDesignActivity extends BaseClassListActivity {
             ToolbarLayoutActivity.class,
             SwipeRefreshLayoutActivity.class,
             KotlinActivity.class,
-            TransitionsMainActivity.class
+            TransitionsMainActivity.class,
+            CustomTabsActivity.class
     };
 
     @Override
