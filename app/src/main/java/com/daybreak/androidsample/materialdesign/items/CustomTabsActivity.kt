@@ -1,10 +1,12 @@
-package com.daybreak.androidsample
+package com.daybreak.androidsample.materialdesign.items
 
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.support.customtabs.CustomTabsIntent
 import butterknife.ButterKnife
+import com.daybreak.androidsample.BaseToolBarActivity
+import com.daybreak.androidsample.R
 
 import kotlinx.android.synthetic.main.content_custom_tabs.*
 

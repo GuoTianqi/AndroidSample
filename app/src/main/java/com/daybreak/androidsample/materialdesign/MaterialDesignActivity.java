@@ -6,12 +6,11 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.Explode;
-import android.transition.Fade;
-import android.transition.Slide;
 import android.view.Window;
 
 import com.daybreak.androidsample.BaseClassListActivity;
-import com.daybreak.androidsample.CustomTabsActivity;
+import com.daybreak.androidsample.materialdesign.items.BottomSheetBehaviorActivity;
+import com.daybreak.androidsample.materialdesign.items.CustomTabsActivity;
 import com.daybreak.androidsample.materialdesign.items.AppBarLayoutActivity;
 import com.daybreak.androidsample.materialdesign.items.ClooapsingToolBarLayoutActivity;
 import com.daybreak.androidsample.materialdesign.items.ConstraintLayoutActivity;
@@ -41,6 +40,7 @@ public class MaterialDesignActivity extends BaseClassListActivity {
             SwipeRefreshLayoutActivity.class,
             KotlinActivity.class,
             TransitionsMainActivity.class,
+            BottomSheetBehaviorActivity.class,
             CustomTabsActivity.class
     };
 

@@ -335,7 +335,7 @@
             android:label="@string/title_activity_bottom_sheet_behavior"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CustomTabsActivity"
+            android:name=".materialdesign.items.CustomTabsActivity"
             android:label="@string/title_activity_custom_tabs"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
