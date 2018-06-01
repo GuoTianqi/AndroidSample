@@ -11,8 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
+            android:id="@+id/avdIv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/avd"/>
+
+        <ImageView
+            android:id="@+id/smileIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_sentiment_satisfied_avd"/>
     </LinearLayout>
+
 </ScrollView>

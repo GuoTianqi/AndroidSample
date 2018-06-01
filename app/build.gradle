@@ -20,6 +20,9 @@ android {
         applicationId "com.daybreak.androidsample"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+
+        vectorDrawables.useSupportLibrary = true
+
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'

@@ -6,10 +6,13 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -46,7 +49,7 @@ public class SwipeRefreshLayoutActivity extends BaseToolBarActivity {
     private LinearLayoutManager mLayoutManager;
     private boolean mLoadingMore = false;
 
-    public static class ItemData {
+    public static class ItemData implements Parcelable {
         private static AtomicLong ID_GEN = new AtomicLong(0);
 
         public long id = ID_GEN.getAndIncrement();
@@ -56,6 +59,36 @@ public class SwipeRefreshLayoutActivity extends BaseToolBarActivity {
         public ItemData(String title, String desc) {
             this.title = id + "  " + title;
             this.desc = id + "  " + desc;
+        }
+
+        protected ItemData(Parcel in) {
+            id = in.readLong();
+            title = in.readString();
+            desc = in.readString();
+        }
+
+        public static final Creator<ItemData> CREATOR = new Creator<ItemData>() {
+            @Override
+            public ItemData createFromParcel(Parcel in) {
+                return new ItemData(in);
+            }
+
+            @Override
+            public ItemData[] newArray(int size) {
+                return new ItemData[size];
+            }
+        };
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeLong(id);
+            dest.writeString(title);
+            dest.writeString(desc);
         }
     }
 
@@ -91,6 +124,8 @@ public class SwipeRefreshLayoutActivity extends BaseToolBarActivity {
         mLayoutManager = new LinearLayoutManager(SwipeRefreshLayoutActivity.this,
                 LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
