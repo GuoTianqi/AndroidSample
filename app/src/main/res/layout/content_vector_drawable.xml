@@ -20,7 +20,15 @@
             android:id="@+id/smileIv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:tint="#0000ff"
             app:srcCompat="@drawable/ic_sentiment_satisfied_avd"/>
+
+        <ImageView
+            android:id="@+id/androidRobot"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:tint="#0000ff"
+            app:srcCompat="@drawable/ic_android_selector"/>
     </LinearLayout>
 
 </ScrollView>

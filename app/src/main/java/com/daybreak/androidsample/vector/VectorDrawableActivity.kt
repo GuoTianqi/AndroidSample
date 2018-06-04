@@ -35,6 +35,14 @@ class VectorDrawableActivity : AppCompatActivity() {
                 drawable.start()
             }
         }
+
+        androidRobot.setOnClickListener {
+            androidRobot.isActivated = !androidRobot.isActivated
+//            val drawable = androidRobot.drawable
+//            if (drawable is Animatable) {
+//                drawable.start()
+//            }
+        }
     }
 
 }

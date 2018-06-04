@@ -1,7 +1,6 @@
 package com.daybreak.androidsample;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.AppBarLayout;
@@ -11,10 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewStub;
-
-import java.util.Arrays;
 
 public class BaseToolBarActivity extends AppCompatActivity {
     private static final boolean DEBUG = BuildConfig.DEBUG;

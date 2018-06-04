@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_activated="true"
+        android:id="@+id/android_enable"
+        android:drawable="@drawable/ic_android_enable"/>
+
+    <item
+        android:id="@+id/android_disable"
+        android:drawable="@drawable/ic_android_disable"
+        />
+
+    <transition
+        android:drawable="@drawable/ic_android_disable_to_enable_animated"
+        android:fromId="@id/android_disable"
+        android:toId="@id/android_enable"/>
+
+    <transition
+        android:drawable="@drawable/ic_android_enable_to_disable_animated"
+        android:fromId="@id/android_enable"
+        android:toId="@id/android_disable"/>
+</animated-selector>

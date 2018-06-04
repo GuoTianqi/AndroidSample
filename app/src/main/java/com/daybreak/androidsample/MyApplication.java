@@ -1,6 +1,7 @@
 package com.daybreak.androidsample;
 
 import android.app.Application;
+import android.support.v7.app.AppCompatDelegate;
 
 import com.squareup.leakcanary.LeakCanary;
 
@@ -19,5 +20,7 @@ public class MyApplication extends Application {
         }
         LeakCanary.install(this);
         // Normal app init code...
+
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
 }

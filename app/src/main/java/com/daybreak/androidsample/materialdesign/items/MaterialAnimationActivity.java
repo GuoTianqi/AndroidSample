@@ -4,9 +4,11 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.drawable.Animatable;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.graphics.drawable.Animatable2Compat;
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat;
 import android.support.v4.content.ContextCompat;
 import android.transition.ChangeImageTransform;
@@ -58,7 +60,7 @@ public class MaterialAnimationActivity extends BaseToolBarActivity {
                     int cx = mFlower.getWidth() / 2;
                     int cy = mFlower.getHeight() / 2;
 
-                    int finalRadius = Math.max(mFlower.getWidth(), mFlower.getHeight());
+                    final float finalRadius = (float) Math.hypot(cx, cy);
 
                     Animator animator = ViewAnimationUtils.createCircularReveal(mFlower, cx, cy, 0, finalRadius);
 
@@ -78,8 +80,9 @@ public class MaterialAnimationActivity extends BaseToolBarActivity {
                     int cy = mFlower.getHeight() / 2;
 
                     int finalRadius = Math.max(mFlower.getWidth(), mFlower.getHeight());
-
-                    Animator animator = ViewAnimationUtils.createCircularReveal(mFlower, cx, cy, finalRadius, 0);
+                    // get the initial radius for the clipping circle
+                    final float initialRadius = (float) Math.hypot(cx, cy);
+                    Animator animator = ViewAnimationUtils.createCircularReveal(mFlower, cx, cy, initialRadius, 0);
                     animator.addListener(new AnimatorListenerAdapter() {
                         @Override
                         public void onAnimationEnd(Animator animation) {
@@ -112,10 +115,12 @@ public class MaterialAnimationActivity extends BaseToolBarActivity {
             }
         });
 
-        AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) ContextCompat.getDrawable(this, R.drawable.animvectordrawable);
+        final AnimatedVectorDrawableCompat animatedVectorDrawable = AnimatedVectorDrawableCompat.create(this, R.drawable.animvectordrawable);
         mAnimVector.setImageDrawable(animatedVectorDrawable);
         animatedVectorDrawable.start();
 
-
+        mAnimVector.setOnClickListener((view) -> {
+            animatedVectorDrawable.start();
+        });
     }
 }
