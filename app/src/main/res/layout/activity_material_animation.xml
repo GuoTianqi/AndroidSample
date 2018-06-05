@@ -74,46 +74,45 @@
             />
 
         <Button
-            android:id="@+id/show_flower"
+            android:id="@+id/showFlower"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
             android:text="SHOW FLOWER"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/hide_flower"
+            app:layout_constraintRight_toLeftOf="@+id/hideFlower"
             app:layout_constraintTop_toBottomOf="@+id/flower"/>
 
         <Button
-            android:id="@+id/hide_flower"
+            android:id="@+id/hideFlower"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="HIDE FLOWER"
-            app:layout_constraintBaseline_toBaselineOf="@+id/show_flower"
-            app:layout_constraintLeft_toRightOf="@+id/show_flower"
+            app:layout_constraintBaseline_toBaselineOf="@+id/showFlower"
+            app:layout_constraintLeft_toRightOf="@+id/showFlower"
             app:layout_constraintRight_toRightOf="parent"/>
 
-        <Button
-            android:id="@+id/button8"
+        <ImageView
+            android:id="@+id/smileIv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
             android:layout_marginTop="26dp"
-            app:layout_constraintTop_toBottomOf="@+id/show_flower"
+            app:layout_constraintTop_toBottomOf="@+id/showFlower"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:background="@drawable/animvectordrawable_bg"
-            app:layout_constraintRight_toLeftOf="@+id/anim_vector"/>
+            android:background="@drawable/btn_remote_send_emoji_n"
+            app:layout_constraintRight_toLeftOf="@+id/animVector"/>
 
         <ImageView
-            android:id="@+id/anim_vector"
+            android:id="@+id/animVector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
             android:layout_marginTop="0dp"
             android:background="@color/chartreuse"
-            app:layout_constraintBottom_toBottomOf="@+id/button8"
-            app:layout_constraintLeft_toRightOf="@+id/button8"
+            app:layout_constraintBottom_toBottomOf="@+id/smileIv"
+            app:layout_constraintLeft_toRightOf="@+id/smileIv"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/button8"
+            app:layout_constraintTop_toTopOf="@+id/smileIv"
             app:srcCompat="@drawable/animvectordrawable"/>
 
 
