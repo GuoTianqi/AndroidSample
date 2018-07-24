@@ -75,5 +75,26 @@
 
         <include layout="@layout/activity_data_binding_contact"
             bind:user="@{viewModel.user}" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@={viewModel.desc}'
+            android:afterTextChanged="@{(text) -> viewModel.onDescTextChanged(text)}"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_light"
+            android:text="@{viewModel.desc}"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@={viewModel.checked}"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show CheckBox Changed"
+            android:onClick="@{() -> viewModel.showCheckBoxChanged()}"/>
     </LinearLayout>
 </layout>

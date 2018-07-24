@@ -9,7 +9,6 @@ import android.text.TextWatcher;
 
 import com.daybreak.androidsample.R;
 import com.daybreak.androidsample.databinding.viewmodel.DataBindingViewModel;
-import com.daybreak.androidsample.databinding.viewmodel.User;
 
 public class DataBindingActivity extends AppCompatActivity {
 
@@ -19,7 +18,9 @@ public class DataBindingActivity extends AppCompatActivity {
         ActivityDataBindingBinding
                 binding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding);
         DataBindingViewModel viewModel = ViewModelProviders.of(this).get(DataBindingViewModel.class);
+        viewModel.getDesc().setValue("Hello world!");
         binding.setViewModel(viewModel);
+        binding.setLifecycleOwner(this);
         binding.firstNameEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
