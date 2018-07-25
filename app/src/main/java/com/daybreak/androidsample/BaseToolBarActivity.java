@@ -19,7 +19,8 @@ public class BaseToolBarActivity extends AppCompatActivity {
     protected CoordinatorLayout mCoordinatorLayout;
     protected AppBarLayout mAppBarLayout;
     protected Toolbar mToolBar;
-    private ViewStub mContentLayout;
+    private ViewStub mContentLayoutStub;
+    private View mContentLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +28,9 @@ public class BaseToolBarActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base_tool_bar);
-        mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
-        mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
-        mToolBar = (Toolbar) findViewById(R.id.toolbar);
+        mCoordinatorLayout = findViewById(R.id.coordinator_layout);
+        mAppBarLayout = findViewById(R.id.app_bar_layout);
+        mToolBar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolBar);
 
         mToolBar.setNavigationIcon(R.drawable.ic_arrow_back_white);
@@ -40,7 +41,7 @@ public class BaseToolBarActivity extends AppCompatActivity {
             }
         });
 
-        mContentLayout = (ViewStub) findViewById(R.id.content_layout);
+        mContentLayoutStub = findViewById(R.id.content_layout_stub);
     }
 
     @Override
@@ -98,8 +99,16 @@ public class BaseToolBarActivity extends AppCompatActivity {
     }
 
     public void setContentLayout(@LayoutRes int layoutResId) {
-        mContentLayout.setLayoutResource(layoutResId);
-        mContentLayout.inflate();
+        mContentLayoutStub.setLayoutResource(layoutResId);
+        mContentLayoutStub.inflate();
+    }
+
+    public View getContentLayout() {
+        if (mContentLayout == null) {
+            mContentLayout = findViewById(R.id.content_layout);
+        }
+
+        return mContentLayout;
     }
 
     @Override

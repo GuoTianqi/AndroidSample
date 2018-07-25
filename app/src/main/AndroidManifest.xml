@@ -363,6 +363,20 @@
         <activity android:name=".sensor.items.AccelerometerUnCalibratedActivity" />
         <activity android:name=".sensor.items.RotationVectorActivity" />
         <activity android:name=".sensor.items.AccelerometerActivity"></activity>
+
+        <activity android:name=".notification.NotificationActivity"
+            android:label="Notification"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
