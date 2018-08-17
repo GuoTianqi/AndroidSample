@@ -23,13 +23,4 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <ViewStub
-        android:id="@+id/content_layout_stub"
-        android:inflatedId="@+id/content_layout"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-    </ViewStub>
-
 </android.support.design.widget.CoordinatorLayout>

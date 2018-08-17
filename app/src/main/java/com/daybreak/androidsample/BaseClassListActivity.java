@@ -29,7 +29,7 @@ abstract public class BaseClassListActivity extends BaseToolBarActivity {
         super.onCreate(savedInstanceState);
         setContentLayout(R.layout.activity_base_class_list);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView = findViewById(R.id.recycler_view);
 
         mRecyclerView.setHasFixedSize(true);
 

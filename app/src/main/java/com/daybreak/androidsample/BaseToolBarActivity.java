@@ -19,7 +19,6 @@ public class BaseToolBarActivity extends AppCompatActivity {
     protected CoordinatorLayout mCoordinatorLayout;
     protected AppBarLayout mAppBarLayout;
     protected Toolbar mToolBar;
-    private ViewStub mContentLayoutStub;
     private View mContentLayout;
 
     @Override
@@ -40,8 +39,11 @@ public class BaseToolBarActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+    }
 
-        mContentLayoutStub = findViewById(R.id.content_layout_stub);
+    @Override
+    public <T extends View> T findViewById(int id) {
+        return super.findViewById(id);
     }
 
     @Override
@@ -99,15 +101,20 @@ public class BaseToolBarActivity extends AppCompatActivity {
     }
 
     public void setContentLayout(@LayoutRes int layoutResId) {
-        mContentLayoutStub.setLayoutResource(layoutResId);
-        mContentLayoutStub.inflate();
+        View contentLayout = getLayoutInflater().inflate(layoutResId, mCoordinatorLayout, false);
+        setContentLayout(contentLayout);
+    }
+
+    public void setContentLayout(View contentLayout) {
+        mContentLayout = contentLayout;
+        CoordinatorLayout.LayoutParams lp = new CoordinatorLayout.LayoutParams(
+                CoordinatorLayout.LayoutParams.MATCH_PARENT, CoordinatorLayout.LayoutParams.MATCH_PARENT
+        );
+        lp.setBehavior(new AppBarLayout.ScrollingViewBehavior());
+        mCoordinatorLayout.addView(contentLayout, lp);
     }
 
     public View getContentLayout() {
-        if (mContentLayout == null) {
-            mContentLayout = findViewById(R.id.content_layout);
-        }
-
         return mContentLayout;
     }
 
