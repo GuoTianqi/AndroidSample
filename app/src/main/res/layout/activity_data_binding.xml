@@ -26,19 +26,22 @@
             android:id="@+id/first_name_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="First Name"/>
+            android:hint="First Name"
+            android:text="@={viewModel.user.firstName}"/>
 
         <EditText
             android:id="@+id/last_name_ex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Last Name"/>
+            android:hint="Last Name"
+            android:text="@={viewModel.user.lastName}"/>
 
         <EditText
             android:id="@+id/email_ex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="email" />
+            android:hint="email"
+            android:text="@={viewModel.user.email}"/>
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
