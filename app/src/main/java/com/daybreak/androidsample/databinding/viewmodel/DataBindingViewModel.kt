@@ -4,8 +4,10 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import android.databinding.Observable
 import android.databinding.ObservableField
 import android.text.Editable
+import android.text.format.Time
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -13,6 +15,12 @@ import java.util.*
 
 class DataBindingViewModel(application: Application) : AndroidViewModel(application) {
     val user = User2()
+    val customTextObservableField = ObservableField<CharSequence>()
+
+    init {
+        val customText = "Hello World"
+        customTextObservableField.set(customText)
+    }
 
     fun onClick(view: View) {
         if (user.friend) {

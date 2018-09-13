@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:bind="http://schemas.android.com/apk/res-auto" >
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <import type="android.view.View" />
         <variable
@@ -8,6 +9,10 @@
             type="com.daybreak.androidsample.databinding.viewmodel.DataBindingViewModel"/>
     </data>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:fillViewport="true">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -99,5 +104,18 @@
             android:layout_height="wrap_content"
             android:text="Show CheckBox Changed"
             android:onClick="@{() -> viewModel.showCheckBoxChanged()}"/>
+
+        <com.daybreak.androidsample.databinding.CustomEditView
+            android:id="@+id/customView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            bind:customText="@={viewModel.customTextObservableField}"/>
+
+        <Button
+            android:id="@+id/changeTextBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change Text"/>
     </LinearLayout>
+    </ScrollView>
 </layout>

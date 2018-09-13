@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 
 import com.daybreak.androidsample.R;
 import com.daybreak.androidsample.databinding.viewmodel.DataBindingViewModel;
@@ -21,6 +22,10 @@ public class DataBindingActivity extends AppCompatActivity {
         viewModel.getDesc().setValue("Hello world!");
         binding.setViewModel(viewModel);
         binding.setLifecycleOwner(this);
+
+        binding.changeTextBtn.setOnClickListener(v -> {
+            binding.customView.setCustomText("Hello World2222");
+        });
     }
 
 }
