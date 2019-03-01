@@ -1,7 +1,7 @@
 package com.daybreak.androidsample.loader.applist;
 
 import android.content.Context;
-import android.support.v7.widget.SearchView;
+import androidx.appcompat.widget.SearchView;
 import android.util.AttributeSet;
 
 public class AppListSearchView extends SearchView {

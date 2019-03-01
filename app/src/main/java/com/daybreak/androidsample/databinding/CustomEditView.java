@@ -1,11 +1,9 @@
 package com.daybreak.androidsample.databinding;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatEditText;
-import android.text.format.Time;
-import android.util.AttributeSet;
+import androidx.appcompat.widget.AppCompatEditText;
 
-import org.w3c.dom.Text;
+import android.util.AttributeSet;
 
 public class CustomEditView extends AppCompatEditText {
     public CustomEditView(Context context) {

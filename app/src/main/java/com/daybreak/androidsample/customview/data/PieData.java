@@ -1,6 +1,6 @@
 package com.daybreak.androidsample.customview.data;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Created by GuoTianqi on 2017/2/28.

@@ -1,10 +1,10 @@
 package com.daybreak.androidsample.archlifecycle.sample;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.Transformations;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.Transformations;
+import androidx.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;

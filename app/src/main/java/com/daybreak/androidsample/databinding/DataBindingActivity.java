@@ -1,12 +1,9 @@
 package com.daybreak.androidsample.databinding;
 
-import android.arch.lifecycle.ViewModelProviders;
-import android.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.daybreak.androidsample.R;
 import com.daybreak.androidsample.databinding.viewmodel.DataBindingViewModel;

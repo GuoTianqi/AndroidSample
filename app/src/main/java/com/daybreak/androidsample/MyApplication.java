@@ -1,7 +1,7 @@
 package com.daybreak.androidsample;
 
 import android.app.Application;
-import android.support.v7.app.AppCompatDelegate;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.squareup.leakcanary.LeakCanary;
 

@@ -1,18 +1,17 @@
 package com.daybreak.androidsample.materialdesign.items;
 
-import android.animation.ObjectAnimator;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v4.graphics.drawable.TintAwareDrawable;
-import android.support.v4.view.WindowCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.graphics.Palette;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.core.graphics.drawable.TintAwareDrawable;
+import androidx.core.view.WindowCompat;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.palette.graphics.Palette;
+import androidx.appcompat.widget.Toolbar;
 import android.transition.Explode;
 import android.transition.Fade;
 import android.view.View;

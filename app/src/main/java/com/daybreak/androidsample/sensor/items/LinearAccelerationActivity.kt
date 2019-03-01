@@ -2,7 +2,7 @@ package com.daybreak.androidsample.sensor.items
 
 import android.hardware.Sensor
 import android.hardware.SensorEvent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.daybreak.androidsample.BaseToolBarActivity
 import com.daybreak.androidsample.R

@@ -1,7 +1,7 @@
 package com.daybreak.androidsample.customview;
 
-import android.support.annotation.IdRes;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.IdRes;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 

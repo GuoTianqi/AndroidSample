@@ -1,8 +1,8 @@
 package com.daybreak.androidsample;
 
 import android.os.Parcel;
-import android.support.test.filters.SmallTest;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.filters.SmallTest;
+import androidx.test.runner.AndroidJUnit4;
 import android.util.Pair;
 
 import com.daybreak.androidsample.data.LogHistory;

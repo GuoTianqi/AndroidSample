@@ -2,7 +2,7 @@ package com.daybreak.androidsample.materialdesign.items;
 
 import android.animation.Animator;
 import android.annotation.TargetApi;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewAnimationUtils;

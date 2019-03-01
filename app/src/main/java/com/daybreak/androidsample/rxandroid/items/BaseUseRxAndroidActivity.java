@@ -2,8 +2,8 @@ package com.daybreak.androidsample.rxandroid.items;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.IntegerRes;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.IntegerRes;
+import androidx.core.content.ContextCompat;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,9 +22,7 @@ import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
-import io.reactivex.internal.operators.single.SingleLift;
 import io.reactivex.schedulers.Schedulers;
 
 public class BaseUseRxAndroidActivity extends BaseToolBarActivity {

@@ -1,9 +1,9 @@
 package com.daybreak.androidsample.notification
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.ViewModel
-import android.support.v4.app.NotificationCompat
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
+import androidx.core.app.NotificationCompat
 import android.util.Log
 import com.daybreak.androidsample.archlifecycle.SingleLiveEvent
 

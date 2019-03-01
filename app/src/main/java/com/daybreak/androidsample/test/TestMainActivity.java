@@ -30,6 +30,7 @@ public class TestMainActivity extends BaseClassListActivity {
         Class[] myDataset = new Class[] {
                 CameraDistanceActivity.class,
                 ScrollBarActivity.class,
+                TranslucentStatusActivity.class
         };
 
         return myDataset;

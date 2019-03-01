@@ -1,13 +1,12 @@
 package com.daybreak.androidsample.databinding;
 
-import android.databinding.BindingAdapter;
-import android.databinding.InverseBindingAdapter;
-import android.databinding.InverseBindingListener;
-import android.databinding.adapters.ListenerUtil;
+import androidx.databinding.BindingAdapter;
+import androidx.databinding.InverseBindingAdapter;
+import androidx.databinding.InverseBindingListener;
+import androidx.databinding.adapters.ListenerUtil;
 import android.text.Editable;
 import android.text.Spanned;
 import android.text.TextWatcher;
-import android.text.format.Time;
 import android.util.Log;
 
 import com.daybreak.androidsample.R;

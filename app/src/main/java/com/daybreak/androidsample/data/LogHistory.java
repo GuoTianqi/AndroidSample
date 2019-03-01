@@ -2,12 +2,10 @@ package com.daybreak.androidsample.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.content.res.TypedArrayUtils;
+import androidx.core.content.res.TypedArrayUtils;
 import android.util.Pair;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 /**

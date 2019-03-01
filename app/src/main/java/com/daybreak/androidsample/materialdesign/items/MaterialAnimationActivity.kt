@@ -8,7 +8,7 @@ import android.content.Intent
 import android.graphics.Path
 import android.os.Build
 import android.os.Bundle
-import android.support.graphics.drawable.AnimatedVectorDrawableCompat
+import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import android.transition.Fade
 import android.util.TypedValue
 import android.view.View
