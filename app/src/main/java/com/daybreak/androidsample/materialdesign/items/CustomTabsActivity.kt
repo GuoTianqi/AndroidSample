@@ -3,7 +3,7 @@ package com.daybreak.androidsample.materialdesign.items
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import android.support.customtabs.CustomTabsIntent
+import androidx.browser.customtabs.CustomTabsIntent
 import butterknife.ButterKnife
 import com.daybreak.androidsample.BaseToolBarActivity
 import com.daybreak.androidsample.R
