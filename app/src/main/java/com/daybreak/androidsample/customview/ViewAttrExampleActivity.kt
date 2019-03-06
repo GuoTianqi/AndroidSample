@@ -65,13 +65,13 @@ class ViewAttrExampleActivity : BaseToolBarActivity() {
                 "解放了忘记\n" +
                 "jflkewjl\n")
 
-        mButton.setOnClickListener({
+        mButton.setOnClickListener {
             val global = Rect()
             mImageView.getGlobalVisibleRect(global);
             val local = Rect()
             mImageView.getLocalVisibleRect(local);
             Toast.makeText(ViewAttrExampleActivity@this, "global=$global, local=$local",
                     Toast.LENGTH_LONG).show()
-        })
+        }
     }
 }

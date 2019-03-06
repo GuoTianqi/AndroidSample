@@ -1,7 +1,10 @@
 package com.daybreak.androidsample;
 
 import android.app.Application;
+import android.content.Context;
+
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.multidex.MultiDex;
 
 import com.squareup.leakcanary.LeakCanary;
 
@@ -22,5 +25,11 @@ public class MyApplication extends Application {
         // Normal app init code...
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 }

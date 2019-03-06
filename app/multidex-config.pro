@@ -1,0 +1,4 @@
+-keep class androidx.**
+-keep class com.squareup.leakcanary.**
+-keep class com.google.android.material.**
+-keep class com.daybreak.androidsample.MainActivity
