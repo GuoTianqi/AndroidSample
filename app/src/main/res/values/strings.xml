@@ -32,4 +32,5 @@
     <string name="title_activity_bottom_sheet_behavior">BottomSheetBehaviorActivity</string>
     <string name="title_activity_custom_tabs">CustomTabsActivity</string>
     <string name="title_activity_vector_drawable">VectorDrawableActivity</string>
+    <string name="title_activity_open_gl">OpenGL ES</string>
 </resources>

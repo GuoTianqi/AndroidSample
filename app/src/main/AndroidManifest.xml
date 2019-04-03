@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -18,6 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+
         <meta-data
             android:name="asset_statements"
             android:resource="@string/asset_statements" />
@@ -254,9 +257,7 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-
-        <!-- test -->
+        </activity> <!-- test -->
         <activity
             android:name=".layout.LayoutActivity"
             android:label="Layout"
@@ -298,9 +299,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".archlifecycle.sample.ArchLifeCycleSampleActivity" />
-
-        <!-- Loader Sample -->
+        <activity android:name=".archlifecycle.sample.ArchLifeCycleSampleActivity" /> <!-- Loader Sample -->
         <activity
             android:name=".loader.LoaderMainActivity"
             android:label="Loader Sample"
@@ -337,7 +336,7 @@
         <activity
             android:name=".materialdesign.items.CustomTabsActivity"
             android:label="@string/title_activity_custom_tabs"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".vector.VectorDrawableActivity"
             android:label="@string/title_activity_vector_drawable"
@@ -370,9 +369,9 @@
         <activity android:name=".sensor.items.LinearAccelerationActivity" />
         <activity android:name=".sensor.items.AccelerometerUnCalibratedActivity" />
         <activity android:name=".sensor.items.RotationVectorActivity" />
-        <activity android:name=".sensor.items.AccelerometerActivity"></activity>
-
-        <activity android:name=".notification.NotificationActivity"
+        <activity android:name=".sensor.items.AccelerometerActivity" />
+        <activity
+            android:name=".notification.NotificationActivity"
             android:label="Notification"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -386,6 +385,23 @@
             </intent-filter>
         </activity>
         <activity android:name=".test.TranslucentStatusActivity" />
+
+        <activity
+            android:name=".opengl.OpenGLMainActivity"
+            android:label="@string/title_activity_open_gl"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".opengl.simple.OpenGlSimpleActivity"></activity>
     </application>
 
 </manifest>
