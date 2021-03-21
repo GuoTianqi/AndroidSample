@@ -11,15 +11,18 @@ import android.os.Bundle
 import androidx.vectordrawable.graphics.drawable.AnimatedVectorDrawableCompat
 import android.transition.Fade
 import android.util.TypedValue
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewAnimationUtils
 import android.view.Window
 
 import com.daybreak.androidsample.BaseToolBarActivity
 import com.daybreak.androidsample.R
-import kotlinx.android.synthetic.main.activity_material_animation.*
+import com.daybreak.androidsample.databinding.ActivityMaterialAnimationBinding
 
 class MaterialAnimationActivity : BaseToolBarActivity() {
+    private lateinit var binding: ActivityMaterialAnimationBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
@@ -27,7 +30,8 @@ class MaterialAnimationActivity : BaseToolBarActivity() {
 
         super.onCreate(savedInstanceState)
 
-        setContentLayout(R.layout.activity_material_animation)
+        binding = ActivityMaterialAnimationBinding.inflate(LayoutInflater.from(this))
+        setContentLayout(binding.root)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val typedValue = TypedValue()
@@ -39,47 +43,47 @@ class MaterialAnimationActivity : BaseToolBarActivity() {
             //            flower.setBackgroundResource(typedValue.resourceId);
         }
 
-        showFlower.setOnClickListener {
+        binding.showFlower.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                val cx = flower.width / 2
-                val cy = flower.height / 2
+                val cx = binding.flower.width / 2
+                val cy = binding.flower.height / 2
 
                 val finalRadius = Math.hypot(cx.toDouble(), cy.toDouble()).toFloat()
 
                 val animator =
-                    ViewAnimationUtils.createCircularReveal(flower, cx, cy, 0f, finalRadius)
+                    ViewAnimationUtils.createCircularReveal(binding.flower, cx, cy, 0f, finalRadius)
 
-                flower.visibility = View.VISIBLE
+                binding.flower.visibility = View.VISIBLE
                 animator.start()
             } else {
-                flower.visibility = View.VISIBLE
+                binding.flower.visibility = View.VISIBLE
             }
         }
 
-        hideFlower.setOnClickListener {
+        binding.hideFlower.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                val cx = flower.width / 2
-                val cy = flower.height / 2
+                val cx = binding.flower.width / 2
+                val cy = binding.flower.height / 2
 
-                val finalRadius = Math.max(flower.width, flower.height)
+                val finalRadius = Math.max(binding.flower.width, binding.flower.height)
                 // get the initial radius for the clipping circle
                 val initialRadius = Math.hypot(cx.toDouble(), cy.toDouble()).toFloat()
                 val animator =
-                    ViewAnimationUtils.createCircularReveal(flower, cx, cy, initialRadius, 0f)
+                    ViewAnimationUtils.createCircularReveal(binding.flower, cx, cy, initialRadius, 0f)
                 animator.addListener(object : AnimatorListenerAdapter() {
                     override fun onAnimationEnd(animation: Animator) {
                         super.onAnimationEnd(animation)
-                        flower.visibility = View.INVISIBLE
+                        binding.flower.visibility = View.INVISIBLE
                     }
                 })
 
                 animator.start()
             } else {
-                flower.visibility = View.INVISIBLE
+                binding.flower.visibility = View.INVISIBLE
             }
         }
 
-        flower.setOnClickListener {
+        binding.flower.setOnClickListener {
             val intent = Intent(
                 this@MaterialAnimationActivity,
                 CoordinatorLayoutExploreActivity::class.java
@@ -90,7 +94,7 @@ class MaterialAnimationActivity : BaseToolBarActivity() {
                 // getWindow().setSharedElementExitTransition(new ChangeImageTransform());
                 startActivity(
                     intent, ActivityOptions.makeSceneTransitionAnimation(
-                        this@MaterialAnimationActivity, flower, "flower"
+                        this@MaterialAnimationActivity, binding.flower, "flower"
                     ).toBundle()
                 )
             } else {
@@ -100,12 +104,12 @@ class MaterialAnimationActivity : BaseToolBarActivity() {
 
         val animatedVectorDrawable =
             AnimatedVectorDrawableCompat.create(this, R.drawable.animvectordrawable)
-        animVector.setImageDrawable(animatedVectorDrawable)
+        binding.animVector.setImageDrawable(animatedVectorDrawable)
         animatedVectorDrawable?.start()
 
-        animVector.setOnClickListener { animatedVectorDrawable?.start() }
+        binding.animVector.setOnClickListener { animatedVectorDrawable?.start() }
 
-        smileIv.setOnClickListener {
+        binding.smileIv.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 val path = Path()
                 path.arcTo(it.x - 100f, it.y, it.x + 100f, it.y + 200f, 270f, -180f, true)

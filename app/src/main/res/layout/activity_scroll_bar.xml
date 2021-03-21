@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="com.daybreak.androidsample.test.ScrollBarActivity">
 
-    <com.daybreak.androidsample.test.MyListView
+    <com.daybreak.androidsample.customview.view.MyListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </com.daybreak.androidsample.test.MyListView>
+    </com.daybreak.androidsample.customview.view.MyListView>
 
     <EditText
         android:id="@+id/editText"

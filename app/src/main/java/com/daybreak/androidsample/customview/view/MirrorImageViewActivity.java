@@ -1,4 +1,4 @@
-package com.daybreak.androidsample.customview;
+package com.daybreak.androidsample.customview.view;
 
 import android.os.Bundle;
 

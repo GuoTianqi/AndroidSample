@@ -6,19 +6,22 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import com.daybreak.androidsample.R
-
-import kotlinx.android.synthetic.main.activity_bottom_sheet_behavior.*
+import com.daybreak.androidsample.databinding.ActivityBottomSheetBehaviorBinding
 
 class BottomSheetBehaviorActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityBottomSheetBehaviorBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bottom_sheet_behavior)
-        setSupportActionBar(toolbar)
+        binding = ActivityBottomSheetBehaviorBinding.inflate(LayoutInflater.from(this))
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
-        val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
+        val bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheet)
         bottomSheetBehavior.setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
                 Log.d(TAG, "slideOffset = $slideOffset")
@@ -30,7 +33,7 @@ class BottomSheetBehaviorActivity : AppCompatActivity() {
 
         })
 
-        showBottomSheet.setOnClickListener {
+        binding.showBottomSheet.setOnClickListener {
             BottomSheetDialog(this).apply {
                 setTitle("Bottom Sheet Dialog")
                 val flower = ImageView(context)

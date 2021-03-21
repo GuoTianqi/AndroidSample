@@ -47,7 +47,7 @@ abstract class SensorBaseActivity : BaseToolBarActivity() {
         }
 
         override fun onSensorChanged(event: SensorEvent?) {
-            Log.d(TAG, event?.values?.joinToString())
+            Log.d(TAG, event?.values?.joinToString() ?: "")
 
             this@SensorBaseActivity.onSensorChanged(event)
         }

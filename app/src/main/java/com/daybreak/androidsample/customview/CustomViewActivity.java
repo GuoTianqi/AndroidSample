@@ -1,6 +1,7 @@
 package com.daybreak.androidsample.customview;
 
 import com.daybreak.androidsample.BaseClassListActivity;
+import com.daybreak.androidsample.customview.view.MirrorImageViewActivity;
 
 public class CustomViewActivity extends BaseClassListActivity {
     @Override

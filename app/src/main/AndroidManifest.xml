@@ -282,7 +282,7 @@
         <activity android:name=".drawable.DrawableRepeatActivity" />
         <activity android:name=".drawable.DrawableTintActivity" />
         <activity android:name=".drawable.DrawableBoundsActivity" />
-        <activity android:name=".customview.MirrorImageViewActivity" />
+        <activity android:name=".customview.view.MirrorImageViewActivity" />
         <activity
             android:name=".archlifecycle.ArchLifecycleActivity"
             android:label="Arch LifeCycle"

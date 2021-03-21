@@ -15,7 +15,6 @@ import android.view.ViewConfiguration
 import android.view.animation.RotateAnimation
 import android.widget.*
 import com.daybreak.androidsample.R
-import kotlinx.android.synthetic.main.activity_swipe_refresh_layout.*
 
 @TargetApi(16)
 class CameraDistanceActivity : AppCompatActivity(), View.OnClickListener {
