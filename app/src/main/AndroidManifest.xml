@@ -9,7 +9,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
     <application
         android:name=".MyApplication"
@@ -20,6 +22,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".compose.items.ComposeTestActivity"
+            android:exported="true"
+            android:label="@string/title_activity_compose_test"
+            android:theme="@style/AppTheme.NoActionBar.NoActionBar"></activity>
 
         <meta-data
             android:name="asset_statements"
@@ -91,6 +98,20 @@
         <activity
             android:name=".customview.CustomViewActivity"
             android:label="Custom View"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+
+            <intent-filter>
+                <action android:name="com.daybreak.androidsample.main_activity_list_item" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".compose.ComposeMainActivity"
+            android:label="Compose UI Show"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -385,7 +406,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".test.TranslucentStatusActivity" />
-
         <activity
             android:name=".opengl.OpenGLMainActivity"
             android:label="@string/title_activity_open_gl"
@@ -400,8 +420,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".opengl.simple.OpenGlSimpleActivity"></activity>
+        <activity android:name=".opengl.simple.OpenGlSimpleActivity" />
     </application>
 
 </manifest>
