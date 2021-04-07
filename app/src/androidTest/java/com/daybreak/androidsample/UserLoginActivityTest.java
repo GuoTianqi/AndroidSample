@@ -1,7 +1,5 @@
 package com.daybreak.androidsample;
 
-import androidx.test.espresso.Espresso;
-import androidx.test.espresso.base.BaseLayerModule$FailureHandlerHolder_Factory;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;

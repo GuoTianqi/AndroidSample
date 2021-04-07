@@ -8,15 +8,14 @@ import android.transition.Explode;
 import android.view.Window;
 
 import com.daybreak.androidsample.BaseClassListActivity;
+import com.daybreak.androidsample.compose.items.ComposeTestActivity;
 import com.daybreak.androidsample.rxandroid.items.AsyncSubjectActivity;
 import com.daybreak.androidsample.rxandroid.items.BaseUseRxAndroidActivity;
 import com.daybreak.androidsample.rxandroid.items.RxSingleActivity;
 
 public class ComposeMainActivity extends BaseClassListActivity {
     public static final Class[] classes = new Class[] {
-            BaseUseRxAndroidActivity.class,
-            AsyncSubjectActivity.class,
-            RxSingleActivity.class,
+            ComposeTestActivity.class
     };
 
     @Override
